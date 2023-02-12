@@ -114,16 +114,81 @@ export default function Home() {
       </main> */}
 
       <div className=" relative overflow-hidden w-full min-h-full ">
-        <Navbar/>
+        <Navbar />
         <div className=" pt-0 bg-white">
-          <section className=" mb-0 overflow-hidden w-full">
-            <div className=" relative">
-              <div className=" touch-pan-y"></div>
-            </div>
-          </section>
+          <Slider />
+          <Category />
         </div>
       </div>
+    </>
+  );
+}
 
+{
+  /* slider */
+}
+export function Slider() {
+  return (
+    <>
+      <section className=" mb-0 overflow-hidden w-full">
+        <div className=" relative">
+          <div className=" touch-pan-y"></div>
+        </div>
+      </section>
+    </>
+  );
+}
+
+{
+  /* category */
+}
+export function Category() {
+  return (
+    <>
+      <section className=" mb-10">
+        <div className=" overflow-x-auto overflow-y-hidden text-center">
+          <ul className=" flex text-sm text-slate-400 flex-nowrap mt-0 mx-auto items-center justify-center list-outside list-none">
+            <li className=" border-b-0 font-bold text-black w-1/2 relative h-auto py-3 px-6 flex items-center justify-center flex-1 list-outside list-none">
+              <a className=" text-black inline-block p-3 whitespace-nowrap cursor-pointer">
+                CATEGORY
+              </a>
+            </li>
+            <li className=" w-1/2 relative h-auto py-3 px-6 border-b-0 flex items-center justify-center flex-1 list-outside list-none">
+              <a className=" inline-block p-3 text-black whitespace-nowrap cursor-pointer">
+                COLLECTION
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div className=" overflow-x-auto overflow-y-hidden text-center pb-5">
+          <div className=" inline-flex items-start flex-nowrap">
+            <ul className=" py-0 px-5 order-1 relative inline-flex flex-nowrap list-outside list-none">
+              <li className=" ml-0 max-w-full text-center list-outside list-none">
+                <a className=" cursor-pointer text-gray-900" href="/">
+                  <span className=" inline-block w-16 h-16 overflow-hidden mb-1 rounded-bl-full align-top text-center">
+                    <img
+                      className=" w-full h-auto align-middle"
+                      src="/images/home/ladies.jpg"
+                      alt="LADIES"
+                    />
+                  </span>
+                  <span className=" block text-slate-500 text-sm font-bold leading-4 text-center">
+                    LADIES
+                  </span>
+                </a>
+              </li>
+            </ul>
+            <ul className=" py-0 px-5 order-2 relative inline-flex flex-nowrap list-outside list-none">
+              <li className=" ml-0 max-w-full text-center list-outside list-none">
+                <a className=" cursor-pointer text-gray-900" href="/">
+                  <span className=" bg-yellow-400 inline-flex items-center justify-center w-16 h-16 rounded-bl-full text-white text-xs"></span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
     </>
   );
 }
