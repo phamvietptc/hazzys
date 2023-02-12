@@ -1,13 +1,14 @@
 import styles from "../../styles/Home.module.css";
 import Image from "next/image";
 import { Inter } from "@next/font/google";
+import Navbar from "@/components/navbar";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
   return (
     <>
-      <main className={styles.main}>
+      {/* <main className={styles.main}>
         <div className={styles.description}>
           <p>
             Get started by editing&nbsp;
@@ -110,7 +111,19 @@ export default function Home() {
             </p>
           </a>
         </div>
-      </main>
+      </main> */}
+
+      <div className=" relative overflow-hidden w-full min-h-full ">
+        <Navbar/>
+        <div className=" pt-0 bg-white">
+          <section className=" mb-0 overflow-hidden w-full">
+            <div className=" relative">
+              <div className=" touch-pan-y"></div>
+            </div>
+          </section>
+        </div>
+      </div>
+
     </>
   );
 }
