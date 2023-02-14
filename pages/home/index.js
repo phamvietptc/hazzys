@@ -15,6 +15,7 @@ export default function Home() {
           <Category />
           <New />
           <Review />
+          <KeyItem/>
         </div>
       </div>
     </>
@@ -267,7 +268,7 @@ export function Review() {
           </div>
           <div className=" pt-10 flex justify-center">
             <div className=" w-full pt-0 pb-10 px-4 mx-auto relative overflow-hidden list-none z-0">
-              <div class="swiper-wrapper"></div>
+              <div class="swiper-wrapper"><img src="/images/home/review.png" alt="slide"/></div>
             </div>
           </div>
           <div className=" max-w-xs my-0 mx-auto relative">
@@ -280,6 +281,43 @@ export function Review() {
           </div>
         </div>
       </section>
+    </>
+  );
+}
+
+// key item
+export function KeyItem() {
+  return (
+    <>
+    <section className=" mb-24 overflow-hidden w-full">
+      <div className=" max-w-screen-2xl w-full h-full my-0 mx-auto">
+        <div className=" flex-col relative flex items-start">
+          <div className=" static pt-0 pb-5 px-0 transform-none w-full max-w-6xl">
+            <h2 className=" py-0 px-5 mb-3 text-4xl font-light leading-9 text-black font-sans">
+              <span className=" block text-left">화창하게</span>
+              <span className=" block text-left">시작해요!</span>
+            </h2>
+          </div>
+          <div className=" w-5/12 min-w-fit mt-24 ml-5 pt-0 pr-0 pb-48 pl-6">
+            <div className=" max-w-full -mt-24 relative mb-5">
+              <p><img className=" max-w-none" width='346px' height='458px' src="/images/home/keyitem.png" alt="item" /></p>
+              <a className=" absolute right-0 bottom-0 inline-flex items-center justify-center w-10 h-10 bg-black cursor-pointer text-gray-900" href="/">
+                <span className=" sr-only">자세히보기</span>
+              </a>
+            </div>
+            <div className=" max-w-full pr-5">
+              <h3 className=" p-0 text-left text-3xl font-normal leading-9 mb-3 font-sans text-black">봄을 기다리며</h3>
+              <p className=" text-left text-black">벌써 봄이 온 것 같죠? 컬러풀한 봄 신상품만 픽해봤습니다. 무채색 코트는 이제 안녕!</p>
+            </div>
+          </div>
+          <div className={styles.listItem}>
+            <div className=" w-full mx-auto relative overflow-hidden list-none p-0 z-0">
+              <div class='swiper-wrapper'></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
     </>
   );
 }
