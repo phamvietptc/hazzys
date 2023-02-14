@@ -303,6 +303,7 @@ export function KeyItem() {
               <p><img className=" max-w-none" width='346px' height='458px' src="/images/home/keyitem.png" alt="item" /></p>
               <a className=" absolute right-0 bottom-0 inline-flex items-center justify-center w-10 h-10 bg-black cursor-pointer text-gray-900" href="/">
                 <span className=" sr-only">자세히보기</span>
+                <img className=" block w-4 h-4" src="/images/home/ico_arr_right_white.png" alt="next" />
               </a>
             </div>
             <div className=" max-w-full pr-5">
