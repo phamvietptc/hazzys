@@ -85,12 +85,12 @@ export function Category() {
       <section className=" mb-10">
         <div className=" overflow-x-auto overflow-y-hidden text-center">
           <ul className=" flex text-sm text-slate-400 flex-nowrap mt-0 mx-auto items-center justify-center list-outside list-none">
-            <li className=" border-b-0 font-bold text-black w-1/2 relative h-auto py-3 px-6 flex items-center justify-center flex-1 list-outside list-none">
+            <li className=" border-b-0 hover:font-bold text-black w-1/2 relative h-auto py-3 px-6 flex items-center justify-center flex-1 list-outside list-none">
               <a className=" text-black inline-block p-3 whitespace-nowrap cursor-pointer">
                 CATEGORY
               </a>
             </li>
-            <li className=" w-1/2 relative h-auto py-3 px-6 border-b-0 flex items-center justify-center flex-1 list-outside list-none">
+            <li className=" w-1/2 relative hover:font-bold h-auto py-3 px-6 border-b-0 flex items-center justify-center flex-1 list-outside list-none">
               <a className=" inline-block p-3 text-black whitespace-nowrap cursor-pointer">
                 COLLECTION
               </a>
@@ -196,7 +196,7 @@ export function New() {
             >
               <li className=" h-auto py-4 px-3 border-b-0 flex items-center justify-center flex-1 list-outside list-none">
                 <a
-                  className=" inline-block py-2 px-3 text-black whitespace-nowrap cursor-pointer"
+                  className=" inline-block py-2 px-3 text-black whitespace-nowrap cursor-pointer hover:font-bold hover:text-orange-500"
                   href={item.link}
                 >
                   {item.text}
@@ -260,7 +260,7 @@ export function Review() {
                   className=" py-5 px-2 font-bold h-auto border-b-0 flex items-center justify-center flex-1 list-outside list-none"
                 >
                   <a
-                    className=" py-2 px-3 border-solid border border-black inline-block text-black whitespace-nowrap cursor-pointer"
+                    className=" py-2 px-3 border-solid border border-black inline-block text-black whitespace-nowrap cursor-pointer hover:bg-black hover:text-white"
                     href={item.link}
                   >
                     {item.text}
@@ -278,7 +278,7 @@ export function Review() {
           </div>
           <div className=" max-w-xs my-0 mx-auto relative">
             <a
-              className=" bg-white text-black border border-solid border-gray-600 flex items-center justify-center w-full h-12 text-base font-bold cursor-pointer"
+              className=" bg-white text-black border border-solid border-gray-600 flex items-center justify-center w-full h-12 text-base font-bold cursor-pointer hover:bg-black hover:text-white"
               href="/"
             >
               리뷰 전체 보기
@@ -472,7 +472,7 @@ export function Best() {
                   className=" py-5 px-2 font-bold h-auto border-b-0 flex items-center justify-center flex-1 list-outside list-none"
                 >
                   <a
-                    className=" py-2 px-3 border border-solid border-black inline-block whitespace-nowrap cursor-pointer"
+                    className=" py-2 px-3 border border-solid border-black inline-block whitespace-nowrap cursor-pointer hover:bg-black hover:text-white"
                     href={item.link}
                   >
                     {item.text}
@@ -480,6 +480,14 @@ export function Best() {
                 </li>
               ))}
             </ul>
+          </div>
+          <div className=" m-0 flex-nowrap pt-0 px-0 pb-5 flex">
+            <div className=" mx-auto relative overflow-hidden list-none p-0 z-0">
+              <div class="swiper-wrapper"></div>
+            </div>
+          </div>
+          <div className=" max-w-xs my-0 mx-auto relative block">
+            <a className=" text-black bg-white border border-solid border-gray-800 flex items-center justify-center w-full h-12 text-base font-bold cursor-pointer hover:bg-black hover:text-white" href="/">베스트 전체 순위 보기</a>
           </div>
         </div>
       </section>
