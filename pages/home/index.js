@@ -15,7 +15,10 @@ export default function Home() {
           <Category />
           <New />
           <Review />
-          <KeyItem/>
+          <KeyItem />
+          <Item />
+          <KeyWord />
+          <Best />
         </div>
       </div>
     </>
@@ -268,7 +271,9 @@ export function Review() {
           </div>
           <div className=" pt-10 flex justify-center">
             <div className=" w-full pt-0 pb-10 px-4 mx-auto relative overflow-hidden list-none z-0">
-              <div class="swiper-wrapper"><img src="/images/home/review.png" alt="slide"/></div>
+              <div class="swiper-wrapper">
+                <img src="/images/home/review.png" alt="slide" />
+              </div>
             </div>
           </div>
           <div className=" max-w-xs my-0 mx-auto relative">
@@ -289,36 +294,195 @@ export function Review() {
 export function KeyItem() {
   return (
     <>
-    <section className=" mb-24 overflow-hidden w-full">
-      <div className=" max-w-screen-2xl w-full h-full my-0 mx-auto">
-        <div className=" flex-col relative flex items-start">
-          <div className=" static pt-0 pb-5 px-0 transform-none w-full max-w-6xl">
-            <h2 className=" py-0 px-5 mb-3 text-4xl font-light leading-9 text-black font-sans">
-              <span className=" block text-left">화창하게</span>
-              <span className=" block text-left">시작해요!</span>
-            </h2>
-          </div>
-          <div className=" w-5/12 min-w-fit mt-24 ml-5 pt-0 pr-0 pb-48 pl-6">
-            <div className=" max-w-full -mt-24 relative mb-5">
-              <p><img className=" max-w-none" width='346px' height='458px' src="/images/home/keyitem.png" alt="item" /></p>
-              <a className=" absolute right-0 bottom-0 inline-flex items-center justify-center w-10 h-10 bg-black cursor-pointer text-gray-900" href="/">
-                <span className=" sr-only">자세히보기</span>
-                <img className=" block w-4 h-4" src="/images/home/ico_arr_right_white.png" alt="next" />
-              </a>
+      <section className=" mb-24 overflow-hidden w-full">
+        <div className=" max-w-screen-2xl w-full h-full my-0 mx-auto">
+          <div className=" flex-col relative flex items-start">
+            <div className=" static pt-0 pb-5 px-0 transform-none w-full max-w-6xl">
+              <h2 className=" py-0 px-5 mb-3 text-4xl font-light leading-9 text-black font-sans">
+                <span className=" block text-left">화창하게</span>
+                <span className=" block text-left">시작해요!</span>
+              </h2>
             </div>
-            <div className=" max-w-full pr-5">
-              <h3 className=" p-0 text-left text-3xl font-normal leading-9 mb-3 font-sans text-black">봄을 기다리며</h3>
-              <p className=" text-left text-black">벌써 봄이 온 것 같죠? 컬러풀한 봄 신상품만 픽해봤습니다. 무채색 코트는 이제 안녕!</p>
+            <div className=" bg-red-100 w-5/12 min-w-fit mt-24 ml-5 pt-0 pr-0 pb-48 pl-6">
+              <div className=" max-w-full -mt-24 relative mb-5">
+                <img src="/images/home/keyitem.png" alt="item" />
+                <a
+                  className=" absolute right-0 bottom-0 inline-flex items-center justify-center w-10 h-10 bg-black cursor-pointer text-gray-900"
+                  href="/"
+                >
+                  <span className=" sr-only">자세히보기</span>
+                  <img
+                    className=" block w-4 h-4"
+                    src="/images/home/ico_arr_right_white.png"
+                    alt="next"
+                  />
+                </a>
+              </div>
+              <div className=" max-w-full pr-5">
+                <h3 className=" p-0 text-left text-3xl font-normal leading-9 mb-3 font-sans text-black">
+                  봄을 기다리며
+                </h3>
+                <p className=" text-left text-black">
+                  벌써 봄이 온 것 같죠? 컬러풀한 봄 신상품만 픽해봤습니다.
+                  무채색 코트는 이제 안녕!
+                </p>
+              </div>
             </div>
-          </div>
-          <div className={styles.listItem}>
-            <div className=" w-full mx-auto relative overflow-hidden list-none p-0 z-0">
-              <div class='swiper-wrapper'></div>
+            <div className={styles.listItem}>
+              <div className=" w-full mx-auto relative overflow-hidden list-none p-0 z-0">
+                <div class=" transform-gpu"></div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
+  );
+}
+
+//item
+export function Item() {
+  return (
+    <>
+      <section className=" mb-24 overflow-hidden w-full">
+        <div className=" max-w-screen-2xl w-full h-full my-0 mx-auto">
+          <div className=" flex-col relative flex items-start">
+            <div className=" static pt-0 px-0 pb-5 transform-none w-full max-w-6xl">
+              <h2 className=" py-0 px-5 mb-3 text-4xl font-light leading-9 text-black font-sans">
+                <span className=" block text-left">HAZZYS</span>
+                <span className=" block text-left">SIGNATURE ITEM</span>
+              </h2>
+            </div>
+            <div className=" bg-cyan-200 w-5/12 min-w-fit mt-24 ml-5 pt-0 pr-0 pb-48 pl-6">
+              <div className=" max-w-full -mt-24 relative mb-5">
+                <img src="/images/home/item.jpeg" alt="item" />
+                <a
+                  className=" absolute right-0 bottom-0 inline-flex items-center justify-center w-10 h-10 bg-black cursor-pointer text-gray-900"
+                  href="/"
+                >
+                  <span className=" sr-only">자세히보기</span>
+                  <img
+                    className=" block w-4 h-4"
+                    src="/images/home/ico_arr_right_white.png"
+                    alt="next"
+                  />
+                </a>
+              </div>
+              <div className=" max-w-full pr-5">
+                <h3 className=" p-0 text-left text-3xl font-normal leading-9 mb-3 font-sans text-black">
+                  클래식 끝판왕 , 아이코닉 신상을 지금 확인해보세요.
+                </h3>
+                <p className=" text-left text-black">
+                  23S/S 아이코닉 바로가기.
+                </p>
+              </div>
+            </div>
+            <div className={styles.listItem}>
+              <div className=" w-full mx-auto relative overflow-hidden list-none p-0 z-0">
+                <div class=" transform-gpu"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </>
+  );
+}
+
+//key word
+export function KeyWord() {
+  return (
+    <>
+      <section className=" mb-24 py-0 px-5">
+        <div className=" max-w-screen-2xl w-full h-full my-0 mx-auto">
+          <div className=" flex-col relative flex items-start">
+            <h2 className=" static mb-8 text-7xl leading-none font-light text-black">
+              <span className=" block">3 in 1</span>
+              <span className=" pl-10 text-slate-300 block">Men's</span>
+              <span className=" block">Bag</span>
+            </h2>
+            <div className=" w-full h-auto relative">
+              <a className=" cursor-pointer text-gray-900" href="/">
+                <p className=" static max-w-full">
+                  <img src="/images/home/keyword.jpeg" alt="key word" />
+                </p>
+                <i className=" bg-[url('/images/home/keyword.jpeg')] hidden absolute top-0 left-0 bottom-0 w-2/3 bg-no-repeat bg-center bg-cover grayscale opacity-30 z-0"></i>
+              </a>
+            </div>
+            <div className=" max-w-full mt-5">
+              <h3 className=" p-0 text-left text-2xl font-sans font-normal mb-3 leading-9 text-black">
+                하나의 가방으로 세 가지 기능을
+              </h3>
+              <span className=" text-left text-black">
+                업그레이드된 캐빈 기어 시리즈를 만나보세요
+              </span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </>
+  );
+}
+
+//best
+export function Best() {
+  const defaultBest = [
+    {
+      link: "/",
+      text: "ALL",
+    },
+    {
+      link: "/",
+      text: "LADIES",
+    },
+    {
+      link: "/",
+      text: "MEN",
+    },
+    {
+      link: "/",
+      text: "ACC",
+    },
+    {
+      link: "/",
+      text: "GOLF",
+    },
+    {
+      link: "/",
+      text: "OUTLET",
+    },
+  ];
+
+  return (
+    <>
+      <section className=" mb-24">
+        <div className=" max-w-screen-2xl w-full h-full my-0 mx-auto">
+          <h2 className=" text-center py-0 px-5 mb-3 text-4xl font-light leading-9 text-black font-sans">
+            <span className=" block text-left">오늘의 베스트&nbsp;</span>
+            <span className=" block text-left">#놓치지 말아요&nbsp;</span>
+          </h2>
+          <p className=" -mt-1 pt-0 px-5 pb-3 text-left text-7xl font-light leading-none text-black font-sans">
+            230215
+          </p>
+          <div className=" overflow-x-auto overflow-y-hidden text-center">
+            <ul className=" py-0 px-4 inline-flex flex-nowrap my-0 mx-auto text-base text-black items-center justify-center list-outside list-none">
+              {defaultBest.map((item, index) => (
+                <li
+                  key={index}
+                  className=" py-5 px-2 font-bold h-auto border-b-0 flex items-center justify-center flex-1 list-outside list-none"
+                >
+                  <a
+                    className=" py-2 px-3 border border-solid border-black inline-block whitespace-nowrap cursor-pointer"
+                    href={item.link}
+                  >
+                    {item.text}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </section>
     </>
   );
 }
