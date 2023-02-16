@@ -20,6 +20,7 @@ export default function Home() {
           <KeyWord />
           <Best />
           <Promo />
+          <Floating />
         </div>
       </div>
     </>
@@ -545,6 +546,27 @@ export function Promo() {
           </div>
         </div>
       </section>
+    </>
+  );
+}
+
+//floating
+export function Floating() {
+  return (
+    <>
+      <aside className=" right-2.5 fixed bottom-0 mb-5 z-50">
+        <a
+          className=" flex items-center justify-center overflow-hidden w-9 h-9 mt-10px border border-solid border-white rounded-50% bg-white cursor-pointer"
+          href="https://pf.kakao.com/_wdUuI/chat"
+        >
+          <i className=" bg-[url('/icons/home/icon-kakao.png')] inline-block w-26px h-26px bg-center bg-cover bg-no-repeat"></i>
+          <span className=" sr-only">카카오톡 고객센터</span>
+        </a>
+        <button className=" flex items-center justify-center overflow-hidden w-9 h-9 mt-10px border border-solid border-white rounded-50% bg-white cursor-pointer">
+          <i className=" bg-[url('/icons/home/icon-arr-top.png')] inline-block w-5 h-5 bg-center bg-cover bg-no-repeat"></i>
+          <span className=" sr-only">맨 위로 이동</span>
+        </button>
+      </aside>
     </>
   );
 }

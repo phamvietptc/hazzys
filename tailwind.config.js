@@ -15,6 +15,15 @@ module.exports = {
         '84px': '84px',
         '87px': '87px',
       },
+      borderRadius: {
+        '50%': '50%',
+      },
+      width: {
+        '26px': '26px',
+      },
+      height: {
+        '26px': '26px',
+      },
     },
   },
   variants: {
