@@ -2,6 +2,7 @@ import styles from "../../styles/Home.module.css";
 import Image from "next/image";
 import { Inter } from "@next/font/google";
 import Navbar from "@/components/navbar";
+import Footer from "@/components/footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -10,7 +11,7 @@ export default function Home() {
     <>
       <div className=" relative overflow-hidden w-full min-h-full ">
         <Navbar />
-        <div className=" pt-0 bg-white">
+        <div className=" pt-0 bg-white mt-0 mx-0 -mb-636px px-0 pb-716px min-h-full">
           <Slider />
           <Category />
           <New />
@@ -22,6 +23,7 @@ export default function Home() {
           <Promo />
           <Floating />
         </div>
+        <Footer />
       </div>
     </>
   );
@@ -248,7 +250,7 @@ export function Review() {
   return (
     <>
       <section className=" mb-24">
-        <div className=" max-w-screen-2xl w-full h-full my-0 mx-auto p-0">
+        <div className=" max-w-1920px w-full h-full my-0 mx-auto p-0">
           <h2 className=" text-center py-0 px-5 mb-3 text-4xl font-light leading-9 m-0 font-sans text-black">
             <span className=" block text-left">‘리뷰 맛집’&nbsp;</span>
             <span className=" block text-left">헤지스닷컴의&nbsp;</span>
@@ -297,7 +299,7 @@ export function KeyItem() {
   return (
     <>
       <section className=" mb-24 overflow-hidden w-full">
-        <div className=" max-w-screen-2xl w-full h-full my-0 mx-auto">
+        <div className=" max-w-1920px w-full h-full my-0 mx-auto">
           <div className=" flex-col relative flex items-start">
             <div className=" static pt-0 pb-5 px-0 transform-none w-full max-w-6xl">
               <h2 className=" py-0 px-5 mb-3 text-4xl font-light leading-9 text-black font-sans">
@@ -347,7 +349,7 @@ export function Item() {
   return (
     <>
       <section className=" mb-24 overflow-hidden w-full">
-        <div className=" max-w-screen-2xl w-full h-full my-0 mx-auto">
+        <div className=" max-w-1920px w-full h-full my-0 mx-auto">
           <div className=" flex-col relative flex items-start">
             <div className=" static pt-0 px-0 pb-5 transform-none w-full max-w-6xl">
               <h2 className=" py-0 px-5 mb-3 text-4xl font-light leading-9 text-black font-sans">
@@ -396,7 +398,7 @@ export function KeyWord() {
   return (
     <>
       <section className=" mb-24 py-0 px-5">
-        <div className=" max-w-screen-2xl w-full h-full my-0 mx-auto">
+        <div className=" max-w-1920px w-full h-full my-0 mx-auto">
           <div className=" flex-col relative flex items-start">
             <h2 className=" static mb-8 text-7xl leading-none font-light text-black">
               <span className=" block">3 in 1</span>
@@ -458,7 +460,7 @@ export function Best() {
   return (
     <>
       <section className=" mb-24">
-        <div className=" max-w-screen-2xl w-full h-full my-0 mx-auto">
+        <div className=" max-w-1920px w-full h-full my-0 mx-auto">
           <h2 className=" text-center py-0 px-5 mb-3 text-4xl font-light leading-9 text-black font-sans">
             <span className=" block text-left">오늘의 베스트&nbsp;</span>
             <span className=" block text-left">#놓치지 말아요&nbsp;</span>
@@ -507,7 +509,7 @@ export function Promo() {
   return (
     <>
       <section className=" mb-0 pt-5 px-0 pb-20 text-white bg-black">
-        <div className=" max-w-screen-2xl w-full h-full my-0 mx-auto">
+        <div className=" max-w-1920px w-full h-full my-0 mx-auto">
           <div className=" items-center flex-col flex justify-center">
             <div className=" w-full py-0 pr-0 pl-4">
               <div className=" relative block pl-6 mb-5 text-white">
