@@ -19,6 +19,7 @@ export default function Home() {
           <Item />
           <KeyWord />
           <Best />
+          <Promo />
         </div>
       </div>
     </>
@@ -487,7 +488,60 @@ export function Best() {
             </div>
           </div>
           <div className=" max-w-xs my-0 mx-auto relative block">
-            <a className=" text-black bg-white border border-solid border-gray-800 flex items-center justify-center w-full h-12 text-base font-bold cursor-pointer hover:bg-black hover:text-white" href="/">베스트 전체 순위 보기</a>
+            <a
+              className=" text-black bg-white border border-solid border-gray-800 flex items-center justify-center w-full h-12 text-base font-bold cursor-pointer hover:bg-black hover:text-white"
+              href="/"
+            >
+              베스트 전체 순위 보기
+            </a>
+          </div>
+        </div>
+      </section>
+    </>
+  );
+}
+
+//promo
+export function Promo() {
+  return (
+    <>
+      <section className=" mb-0 pt-5 px-0 pb-20 text-white bg-black">
+        <div className=" max-w-screen-2xl w-full h-full my-0 mx-auto">
+          <div className=" items-center flex-col flex justify-center">
+            <div className=" w-full py-0 pr-0 pl-4">
+              <div className=" relative block pl-6 mb-5 text-white">
+                <h2 className=" absolute top-24 left-0 pb-10 py-0 px-5 mb-2 text-4xl font-light leading-9">
+                  <div className=" w-24 h-1 mb-2 bg-white absolute left-0 bottom-0 block"></div>
+                  <strong className=" font-bold">HAZZYS NOW</strong>
+                  <div className=" w-3 h-3 mt-0 mr-0 mb-1 ml-84px border-solid border-t-2 border-r-2 border-b-0 border-l-0 border-white rotate-45 absolute left-0 bottom-0 block"></div>
+                </h2>
+                <i className=" bg-[url('/images/home/promo.jpeg')] w-full flex items-center justify-center px-0 pb-0 pt-full font-bold not-italic bg-no-repeat bg-center bg-cover text-white"></i>
+              </div>
+              <div className=" px-5">
+                <h3 className=" p-0 text-left text-3xl font-normal mb-3 leading-9">
+                  HAZZYS MAGAZINE
+                </h3>
+                <p className=" mt-1 text-left">
+                  헤지스의 다양한 콜라보, 팝업, 이벤트 등 최신 브랜드 소식을
+                  만나보세요
+                </p>
+                <a
+                  className=" text-white inline-flex items-center mt-3 py-1 px-0 font-bold leading-6 cursor-pointer"
+                  href="/"
+                >
+                  자세히보기
+                  <i className=" border-white inline-block w-2 h-2 mt-0 mr-0 mb-0 ml-1 border-t border-r border-b-0 border-l-0 border-solid rotate-45" />
+                </a>
+              </div>
+            </div>
+            <div className=" w-full flex pt-8 px-5 pb-0 items-start">
+              <a className=" bg-[url('/images/home/promo1.jpeg')] mr-10px mt-87px mb-0 ml-0 w-full py-28.125% px-0 flex items-center justify-center not-italic font-bold bg-no-repeat bg-center bg-cover text-white cursor-pointer">
+                <span>리뷰의 모든 것</span>
+              </a>
+              <a className=" bg-[url('/images/home/promo2.jpeg')] w-full py-28.125% px-0 flex items-center justify-center not-italic font-bold bg-no-repeat bg-center bg-cover text-white cursor-pointer">
+                <span>H사진관</span>
+              </a>
+            </div>
           </div>
         </div>
       </section>
