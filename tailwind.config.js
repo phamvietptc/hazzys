@@ -15,20 +15,23 @@ module.exports = {
         "10px": "10px",
         "84px": "84px",
         "87px": "87px",
-        "636px": "636px",
+        "668px": "668px",
+        "30px": "30px",
       },
       borderRadius: {
         "50%": "50%",
       },
       width: {
         "26px": "26px",
+        "1px": "1px",
+        "76px": "76px",
       },
       maxWidth: {
         "1920px": "1920px",
       },
       height: {
         "26px": "26px",
-        "636px": "636px",
+        "668px": "668px",
       },
       minHeight: {
         full: "100%",
