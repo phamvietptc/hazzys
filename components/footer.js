@@ -114,7 +114,7 @@ export default function Footer() {
                 <li className=" flex items-center py-1 px-0 list-outside list-none">
                   (주)LF
                 </li>
-                <li className=" w-full md:w-none flex items-center py-1 px-0 list-outside list-none md:before:block md:before:w-1px md:before:h-3 md:before:my-0 md:before:mx-3 md:before:bg-slate-100">
+                <li className=" w-full md:w-auto flex items-center py-1 px-0 list-outside list-none md:before:block md:before:w-1px md:before:h-3 md:before:my-0 md:before:mx-3 md:before:bg-slate-300">
                   대표이사 오규식/김상균
                 </li>
               </ul>
@@ -122,10 +122,10 @@ export default function Footer() {
                 <li className=" flex items-center py-1 px-0 list-outside list-none">
                   서울 강남구 언주로 870
                 </li>
-                <li className=" flex items-center py-1 px-0 list-outside list-none before:bg-slate-100 before:block before:w-1px before:h-3 before:my-0 before:mx-3">
+                <li className=" flex items-center py-1 px-0 list-outside list-none before:bg-slate-300 before:block before:w-1px before:h-3 before:my-0 before:mx-3">
                   1544-5114 (유료)
                 </li>
-                <li className=" w-full flex items-center py-1 px-0 list-outside list-none">
+                <li className=" w-full md:w-auto flex items-center py-1 px-0 list-outside list-none md:before:block md:before:w-1px md:before:h-3 md:before:my-0 md:before:mx-3 md:before:bg-slate-300">
                   lfcs@lfcorp.com
                 </li>
               </ul>
@@ -133,7 +133,7 @@ export default function Footer() {
                 <li className=" flex items-center py-1 px-0 list-outside list-none">
                   통신판매업신고 : 제2010-서울강남-00066호
                 </li>
-                <li className=" w-full flex items-center py-1 px-0 list-outside list-none">
+                <li className=" w-full md:w-auto flex items-center py-1 px-0 list-outside list-none md:before:block md:before:w-1px md:before:h-3 md:before:my-0 md:before:mx-3 md:before:bg-slate-300">
                   사업자등록번호 : 211-87-87724
                   <a
                     className=" block font-bold text-black ml-3 cursor-pointer"
@@ -146,16 +146,34 @@ export default function Footer() {
               </ul>
             </address>
             <div className=" mt-4 flex flex-wrap mb-3">
-              <a className=" hidden"></a>
-              <a className=" hidden"></a>
-              <a className=" overflow-hidden w-76px mr-30px flex items-center my-2 ml-0 text-slate-800 cursor-pointer">
+              <a
+                className=" hidden md:flex md:items-center md:my-2 md:mr-50px md:ml-0 md:cursor-pointer"
+                href="https://www.hometax.go.kr/websquare/websquare.html?w2xPath=/ui/pp/index.xml"
+                target="_blank"
+              >
+                <img
+                  src="/images/home/img-parenter2.png"
+                  alt="국세청 현금영수증 서비스"
+                />
+              </a>
+              <a
+                className=" hidden md:flex md:items-center md:my-2 md:mr-50px md:ml-0 md:cursor-pointer"
+                href="https://www.safetykorea.kr/"
+                target="_blank"
+              >
+                <img
+                  src="/images/home/img-parenter3.png"
+                  alt="제품안전인증검색 불법제품신고센터"
+                />
+              </a>
+              <a className=" overflow-hidden w-76px md:w-auto mr-30px md:mr-50px flex items-center my-2 ml-0 text-slate-800 cursor-pointer md:pointer-events-none">
                 <img
                   className=" max-w-none"
                   src="/images/home/img-parenter.png"
                   alt="고객님께서 안전거래를 위해 현금 등으로 결제하신 경우 저희 쇼핑몰에서 가입한 우리은행의 채무자 지급보증(구매안전서비스)을 이용하실 수 있습니다."
                 />
               </a>
-              <a className=" h-8 mr-0 py-0 px-3 text-sm border border-solid border-slate-300 flex items-center my-2 mb-0 cursor-pointer text-slate-800">
+              <a className=" h-8 mr-0 py-0 px-3 text-sm border border-solid border-slate-300 flex items-center my-2 mb-0 cursor-pointer text-slate-800 md:my-2 md:mr-50px md:ml-0">
                 서비스가입사실확인
               </a>
             </div>
