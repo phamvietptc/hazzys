@@ -12,6 +12,10 @@ module.exports = {
         "716px": "716px",
         "50px": "50px",
         "30px": "30px",
+        "45px": "45px",
+        "52px": "52px",
+        "0.520833px": "0.520833px",
+        "203px": "203px",
       },
       margin: {
         "10px": "10px",
@@ -21,6 +25,8 @@ module.exports = {
         "30px": "30px",
         "353px": "353px",
         "50px": "50px",
+        "0.46875px": "0.46875px",
+        "14px": "14px",
       },
       borderRadius: {
         "50%": "50%",
@@ -40,12 +46,26 @@ module.exports = {
         "668px": "668px",
         "353px": "353px",
         "70px": "70px",
+        "59px": "59px",
+        "60px": "60px",
+        "52px": "52px",
+        "calc-52px": "calc(100% - 52px)",
       },
       minHeight: {
         full: "100%",
+        "60px": "60px",
       },
       backgroundSize: {
         "24px": "24px",
+      },
+      spacing: {
+        "60px": "60px",
+        "479.219px": "479.219px",
+        "746px": "746px",
+        "52px": "52px",
+      },
+      boxShadow: {
+        "0px24px20px": "0px 24px 20px rgb(0 0 0 / 10%)",
       },
     },
   },
