@@ -16,6 +16,9 @@ module.exports = {
         "52px": "52px",
         "0.520833px": "0.520833px",
         "203px": "203px",
+        "120px": "120px",
+        "433px": "433px",
+        "10px": "10px",
       },
       margin: {
         "10px": "10px",
@@ -37,9 +40,11 @@ module.exports = {
         "76px": "76px",
         "58px": "58px",
         "none": "none",
+        "70px": "70px",
       },
       maxWidth: {
         "1920px": "1920px",
+        "70px": "70px",
       },
       height: {
         "26px": "26px",
@@ -50,6 +55,7 @@ module.exports = {
         "60px": "60px",
         "52px": "52px",
         "calc-52px": "calc(100% - 52px)",
+        "18px": "18px",
       },
       minHeight: {
         full: "100%",

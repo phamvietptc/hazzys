@@ -11,7 +11,7 @@ export default function Home() {
     <>
       <div className=" relative overflow-hidden w-full min-h-full ">
         <Navbar />
-        <div className=" pt-0 bg-white mt-0 mx-0 -mb-636px px-0 pb-716px min-h-full">
+        <div className=" pt-0 bg-white mt-0 mx-0 -mb-636px px-0 pb-716px min-h-full md:pt-120px md:pb-433px">
           <Slider />
           <Category />
           <New />
@@ -33,8 +33,8 @@ export default function Home() {
 export function Slider() {
   return (
     <>
-      <section className=" mb-0 overflow-hidden w-full">
-        <div className=" relative">
+      <section className=" mb-0 md:mb-50px overflow-hidden w-full">
+        <div className=" relative md:overflow-hidden">
           <div className=" touch-pan-y">
             <div className=" relative w-full h-full z-0 flex transition-transform box-content">
               <img
@@ -86,15 +86,15 @@ export function Category() {
 
   return (
     <>
-      <section className=" mb-10">
+      <section className=" mb-10 md:mb-20">
         <div className=" overflow-x-auto overflow-y-hidden text-center">
-          <ul className=" flex text-sm text-slate-400 flex-nowrap mt-0 mx-auto items-center justify-center list-outside list-none">
-            <li className=" border-b-0 hover:font-bold text-black w-1/2 relative h-auto py-3 px-6 flex items-center justify-center flex-1 list-outside list-none">
+          <ul className=" flex text-sm text-slate-400 flex-nowrap my-0 mx-auto items-center justify-center list-outside list-none md:inline-flex">
+            <li className=" border-b-0 hover:font-bold text-black w-1/2 md:w-auto relative h-auto py-3 px-6 flex items-center justify-center flex-1 list-outside list-none">
               <a className=" text-black inline-block p-3 whitespace-nowrap cursor-pointer">
                 CATEGORY
               </a>
             </li>
-            <li className=" w-1/2 relative hover:font-bold h-auto py-3 px-6 border-b-0 flex items-center justify-center flex-1 list-outside list-none">
+            <li className=" w-1/2 md:w-auto relative hover:font-bold h-auto py-3 px-6 border-b-0 flex items-center justify-center flex-1 list-outside list-none before:absolute before:top-1/2 before:left-0 before:block before:w-1px before:h-18px before:bg-slate-300 before:-translate-y-1/2">
               <a className=" inline-block p-3 text-black whitespace-nowrap cursor-pointer">
                 COLLECTION
               </a>
@@ -104,32 +104,28 @@ export function Category() {
 
         <div className=" overflow-x-auto overflow-y-hidden text-center pb-5">
           <div className=" inline-flex items-start flex-nowrap">
-            {defaultContents.map((item, index) => (
-              <ul
-                key={index}
-                className=" py-0 px-5 order-1 relative inline-flex flex-nowrap list-outside list-none"
-              >
-                <li className=" ml-0 max-w-full text-center list-outside list-none">
+            <ul className=" py-0 px-5 md:px-30px order-1 relative inline-flex flex-nowrap list-outside list-none">
+              {defaultContents.map((item, index) => (
+                <li
+                  key={index}
+                  className=" ml-10px max-w-full md:max-w-70px text-center list-outside list-none"
+                >
                   <a className=" cursor-pointer text-gray-900" href="/">
-                    <span className=" rounded-full inline-block w-16 h-16 overflow-hidden mb-1 align-top text-center">
-                      <img
-                        className=" w-full h-auto align-middle"
-                        src={item.image}
-                        alt="LADIES"
-                      />
+                    <span className=" rounded-full inline-block w-70px h-70px overflow-hidden mb-1 align-top text-center">
+                      <img className=" w-full" src={item.image} alt="LADIES" />
                     </span>
                     <span className=" block text-slate-500 text-sm font-bold leading-4 text-center">
                       {item.text}
                     </span>
                   </a>
                 </li>
-              </ul>
-            ))}
+              ))}
+            </ul>
 
-            <ul className=" py-0 px-5 order-2 relative inline-flex flex-nowrap list-outside list-none">
+            <ul className=" py-0 px-10px md:px-30px order-2 relative inline-flex flex-nowrap list-outside list-none">
               <li className=" ml-0 max-w-full text-center list-outside list-none">
                 <a className=" cursor-pointer text-gray-900" href="/">
-                  <span className=" bg-yellow-400 inline-flex items-center justify-center w-16 h-16 rounded-full text-white text-xs">
+                  <span className=" bg-yellow-400 inline-flex items-center justify-center w-70px h-70px rounded-full text-white text-xs">
                     피즈
                   </span>
                 </a>
