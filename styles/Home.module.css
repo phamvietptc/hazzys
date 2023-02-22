@@ -1,9 +1,0 @@
-.listItem {
-  position: static;
-  width: calc(100% - (5.56% + 10px));
-  margin: -147px -5px 0 calc(5.56% + 15px);
-  transition: all .5s;
-  display: flex;
-  flex-wrap: wrap;
-  align-content: stretch;
-}

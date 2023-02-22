@@ -182,11 +182,17 @@ export function New() {
 
   return (
     <>
-      <section className=" mb-24">
-        <h2 className=" text-center py-0 px-5 mb-3 text-4xl font-light leading-9 font-sans text-black">
-          <span className=" block text-left">반가워요&nbsp;</span>
-          <span className=" block text-left">오늘의 신상품을&nbsp;</span>
-          <span className=" block text-left">소개할게요!&nbsp;</span>
+      <section className=" mb-24 md:mb-150px">
+        <h2 className=" text-center py-0 px-5 md:p-0 mb-3 text-4xl font-light leading-9 font-sans text-black">
+          <span className=" block text-left md:inline-block">
+            반가워요&nbsp;
+          </span>
+          <span className=" block text-left md:inline-block">
+            오늘의 신상품을&nbsp;
+          </span>
+          <span className=" block text-left md:inline-block">
+            소개할게요!&nbsp;
+          </span>
         </h2>
         <div className=" overflow-x-auto overflow-y-hidden text-center">
           {defaultNew.map((item, index) => (
@@ -205,8 +211,8 @@ export function New() {
             </ul>
           ))}
         </div>
-        <div className=" flex-nowrap p-0 flex">
-          <div className=" touch-pan-y mx-auto relative overflow-hidden list-none p-0 z-0">
+        <div className=" flex-nowrap flex">
+          <div className=" mx-auto relative overflow-hidden list-none z-0">
             <div class="swiper-wrapper">
               <img
                 width="348px"
@@ -245,12 +251,18 @@ export function Review() {
 
   return (
     <>
-      <section className=" mb-24">
-        <div className=" max-w-1920px w-full h-full my-0 mx-auto p-0">
-          <h2 className=" text-center py-0 px-5 mb-3 text-4xl font-light leading-9 m-0 font-sans text-black">
-            <span className=" block text-left">‘리뷰 맛집’&nbsp;</span>
-            <span className=" block text-left">헤지스닷컴의&nbsp;</span>
-            <span className=" block text-left">패션피플은?&nbsp;</span>
+      <section className=" mb-24 md:mb-100px">
+        <div className=" max-w-1920px w-full h-full my-0 mx-auto">
+          <h2 className=" text-center py-0 px-5 md:p-0 mb-3 text-4xl font-light leading-9 m-0 font-sans text-black">
+            <span className=" block text-left md:inline-block">
+              ‘리뷰 맛집’&nbsp;
+            </span>
+            <span className=" block text-left md:inline-block">
+              헤지스닷컴의&nbsp;
+            </span>
+            <span className=" block text-left md:inline-block">
+              패션피플은?&nbsp;
+            </span>
           </h2>
           <div className=" overflow-x-auto overflow-y-hidden text-center">
             <ul className=" py-0 px-4 inline-flex flex-nowrap my-0 mx-auto text-base text-black items-center justify-center list-outside list-none">
@@ -269,8 +281,8 @@ export function Review() {
               ))}
             </ul>
           </div>
-          <div className=" pt-10 flex justify-center">
-            <div className=" w-full pt-0 pb-10 px-4 mx-auto relative overflow-hidden list-none z-0">
+          <div className=" pb-10 md:pb-60px flex justify-center">
+            <div className=" touch-pan-y w-full md:w-auto pt-0 pb-10 px-4 md:p-0 mx-auto relative overflow-hidden list-none z-0">
               <div class="swiper-wrapper">
                 <img src="/images/home/review.png" alt="slide" />
               </div>
@@ -294,17 +306,17 @@ export function Review() {
 export function KeyItem() {
   return (
     <>
-      <section className=" mb-24 overflow-hidden w-full">
+      <section className=" mb-24 md:mb-150px overflow-hidden w-full">
         <div className=" max-w-1920px w-full h-full my-0 mx-auto">
-          <div className=" flex-col relative flex items-start">
-            <div className=" static pt-0 pb-5 px-0 transform-none w-full max-w-6xl">
-              <h2 className=" py-0 px-5 mb-3 text-4xl font-light leading-9 text-black font-sans">
+          <div className=" flex-col relative flex items-start md:flex-row">
+            <div className=" static pt-0 pb-5 px-0 transform-none w-full max-w-6xl md:absolute md:top-85px md:left-1/2 md:max-w-6xl md:pb-0 md:pl-10 md:-translate-x-1/2">
+              <h2 className=" py-0 px-5 md:p-0 mb-3 text-4xl font-light leading-9 text-black font-sans">
                 <span className=" block text-left">화창하게</span>
                 <span className=" block text-left">시작해요!</span>
               </h2>
             </div>
-            <div className=" bg-red-100 w-5/12 min-w-fit mt-24 ml-5 pt-0 pr-0 pb-48 pl-6">
-              <div className=" max-w-full -mt-24 relative mb-5">
+            <div className=" bg-red-100 w-5/12 min-w-fit md:min-w-580px mt-24 md:mt-68px ml-5 md:ml-auto pt-0 pr-0 md:pr-2.6041666667% pb-48 md:pb-20 pl-6 md:pl-7.9166666667%">
+              <div className=" max-w-full md:max-w-591px -mt-24 md:-mt-68px relative mb-5">
                 <img src="/images/home/keyitem.png" alt="item" />
                 <a
                   className=" absolute right-0 bottom-0 inline-flex items-center justify-center w-10 h-10 bg-black cursor-pointer text-gray-900"
@@ -318,8 +330,8 @@ export function KeyItem() {
                   />
                 </a>
               </div>
-              <div className=" max-w-full pr-5">
-                <h3 className=" p-0 text-left text-3xl font-normal leading-9 mb-3 font-sans text-black">
+              <div className=" max-w-full pr-5 md:max-w-591px md:p-0">
+                <h3 className=" text-left text-3xl font-normal leading-9 mb-3 font-sans text-black">
                   봄을 기다리며
                 </h3>
                 <p className=" text-left text-black">
@@ -328,7 +340,7 @@ export function KeyItem() {
                 </p>
               </div>
             </div>
-            <div className={styles.listItem}>
+            <div className=" static w-calc-10px m-calc-147px flex flex-wrap md:top-280px md:w-calc-505px md:absolute md:left-0 md:my-0 md:-mx-10px">
               <div className=" w-full mx-auto relative overflow-hidden list-none p-0 z-0">
                 <div class=" transform-gpu"></div>
               </div>
