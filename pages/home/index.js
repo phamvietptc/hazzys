@@ -356,17 +356,17 @@ export function KeyItem() {
 export function Item() {
   return (
     <>
-      <section className=" mb-24 overflow-hidden w-full">
+      <section className=" mb-24 md:mb-150px overflow-hidden w-full">
         <div className=" max-w-1920px w-full h-full my-0 mx-auto">
           <div className=" flex-col relative flex items-start">
-            <div className=" static pt-0 px-0 pb-5 transform-none w-full max-w-6xl">
-              <h2 className=" py-0 px-5 mb-3 text-4xl font-light leading-9 text-black font-sans">
+            <div className=" static pt-0 px-0 pb-5 transform-none w-full max-w-6xl md:absolute md:top-85px md:left-1/2 md:max-w-6xl md:py-0 md:pr-0 md:pl-10 md:-translate-x-1/2">
+              <h2 className=" py-0 px-5 mb-3 text-4xl font-light leading-9 text-black font-sans md:p-0">
                 <span className=" block text-left">HAZZYS</span>
                 <span className=" block text-left">SIGNATURE ITEM</span>
               </h2>
             </div>
-            <div className=" bg-cyan-200 w-5/12 min-w-fit mt-24 ml-5 pt-0 pr-0 pb-48 pl-6">
-              <div className=" max-w-full -mt-24 relative mb-5">
+            <div className=" bg-cyan-200 w-5/12 min-w-fit mt-24 ml-5 pt-0 pr-0 pb-48 pl-6 md:min-w-580px md:mt-68px md:ml-auto md:pr-2.6041666667% md:pb-20 md:pl-7.9166666667%">
+              <div className=" max-w-full -mt-24 relative mb-5 md:max-w-591px md:-mt-68px">
                 <img src="/images/home/item.jpeg" alt="item" />
                 <a
                   className=" absolute right-0 bottom-0 inline-flex items-center justify-center w-10 h-10 bg-black cursor-pointer text-gray-900"
@@ -380,8 +380,8 @@ export function Item() {
                   />
                 </a>
               </div>
-              <div className=" max-w-full pr-5">
-                <h3 className=" p-0 text-left text-3xl font-normal leading-9 mb-3 font-sans text-black">
+              <div className=" max-w-full pr-5 md:max-w-591px">
+                <h3 className=" text-left text-3xl font-normal leading-9 mb-3 font-sans text-black">
                   클래식 끝판왕 , 아이코닉 신상을 지금 확인해보세요.
                 </h3>
                 <p className=" text-left text-black">
@@ -389,7 +389,7 @@ export function Item() {
                 </p>
               </div>
             </div>
-            <div className={styles.listItem}>
+            <div className=" static w-calc-10px m-calc-147px flex flex-wrap md:absolute md:top-340px md:left-0 md:w-63.125% md:my-0 md:-mx-10px">
               <div className=" w-full mx-auto relative overflow-hidden list-none p-0 z-0">
                 <div class=" transform-gpu"></div>
               </div>
@@ -405,24 +405,26 @@ export function Item() {
 export function KeyWord() {
   return (
     <>
-      <section className=" mb-24 py-0 px-5">
+      <section className=" mb-24 py-0 px-5 md:mb-150px md:p-0">
         <div className=" max-w-1920px w-full h-full my-0 mx-auto">
-          <div className=" flex-col relative flex items-start">
-            <h2 className=" static mb-8 text-7xl leading-none font-light text-black">
+          <div className=" flex-col relative flex items-start md:flex-row">
+            <h2 className=" static mb-8 text-7xl leading-none font-light text-black md:absolute md:top-270px md:left-57.0833333333% md:mb-60px md:text-7.7 md:leading-835">
               <span className=" block">3 in 1</span>
-              <span className=" pl-10 text-slate-300 block">Men's</span>
+              <span className=" pl-10 md:pl-13.5% text-slate-300 block">
+                Men's
+              </span>
               <span className=" block">Bag</span>
             </h2>
-            <div className=" w-full h-auto relative">
+            <div className=" w-full h-auto relative md:w-57.0833333333% md:h-980px">
               <a className=" cursor-pointer text-gray-900" href="/">
-                <p className=" static max-w-full">
+                <p className=" static max-w-full md:absolute md:max-w-500px md:top-40 md:right-8.4854014599% md:z-10">
                   <img src="/images/home/keyword.jpeg" alt="key word" />
                 </p>
-                <i className=" bg-[url('/images/home/keyword.jpeg')] hidden absolute top-0 left-0 bottom-0 w-2/3 bg-no-repeat bg-center bg-cover grayscale opacity-30 z-0"></i>
+                <i className=" bg-[url('/images/home/keyword.jpeg')] hidden absolute top-0 left-0 bottom-0 w-2/3 bg-no-repeat bg-center bg-cover grayscale opacity-30 z-0 md:block md:h-980px"></i>
               </a>
             </div>
-            <div className=" max-w-full mt-5">
-              <h3 className=" p-0 text-left text-2xl font-sans font-normal mb-3 leading-9 text-black">
+            <div className=" max-w-full mt-5 md:max-w-330px md:mt-600px">
+              <h3 className=" text-left text-2xl font-sans font-normal mb-3 leading-9 text-black md:text-3xl">
                 하나의 가방으로 세 가지 기능을
               </h3>
               <span className=" text-left text-black">
@@ -467,13 +469,17 @@ export function Best() {
 
   return (
     <>
-      <section className=" mb-24">
+      <section className=" mb-24 md:mb-150px">
         <div className=" max-w-1920px w-full h-full my-0 mx-auto">
-          <h2 className=" text-center py-0 px-5 mb-3 text-4xl font-light leading-9 text-black font-sans">
-            <span className=" block text-left">오늘의 베스트&nbsp;</span>
-            <span className=" block text-left">#놓치지 말아요&nbsp;</span>
+          <h2 className=" text-center py-0 px-5 md:p-0 mb-3 text-4xl font-light leading-9 text-black font-sans">
+            <span className=" block text-left md:inline-block">
+              오늘의 베스트&nbsp;
+            </span>
+            <span className=" block text-left md:inline-block">
+              #놓치지 말아요&nbsp;
+            </span>
           </h2>
-          <p className=" -mt-1 pt-0 px-5 pb-3 text-left text-7xl font-light leading-none text-black font-sans">
+          <p className=" -mt-1 pt-0 px-5 pb-3 md:py-10px md:px-0 text-left md:text-center text-7xl font-light leading-none md:leading-60px text-black font-sans">
             230215
           </p>
           <div className=" overflow-x-auto overflow-y-hidden text-center">
@@ -484,7 +490,7 @@ export function Best() {
                   className=" py-5 px-2 font-bold h-auto border-b-0 flex items-center justify-center flex-1 list-outside list-none"
                 >
                   <a
-                    className=" py-2 px-3 border border-solid border-black inline-block whitespace-nowrap cursor-pointer hover:bg-black hover:text-white"
+                    className=" py-2 px-10px border border-solid border-black inline-block whitespace-nowrap cursor-pointer hover:bg-black hover:text-white"
                     href={item.link}
                   >
                     {item.text}
@@ -493,11 +499,11 @@ export function Best() {
               ))}
             </ul>
           </div>
-          <div className=" m-0 flex-nowrap pt-0 px-0 pb-5 flex">
-            <div className=" mx-auto relative overflow-hidden list-none p-0 z-0">
+          {/* <div className=" flex-nowrap pt-0 px-0 pb-5 flex md:my-0 md:-mx-10px">
+            <div className=" mx-auto relative overflow-hidden list-none z-0">
               <div class="swiper-wrapper"></div>
             </div>
-          </div>
+          </div> */}
           <div className=" max-w-xs my-0 mx-auto relative block">
             <a
               className=" text-black bg-white border border-solid border-gray-800 flex items-center justify-center w-full h-12 text-base font-bold cursor-pointer hover:bg-black hover:text-white"
@@ -516,20 +522,18 @@ export function Best() {
 export function Promo() {
   return (
     <>
-      <section className=" mb-0 pt-5 px-0 pb-20 text-white bg-black">
+      <section className=" pt-5 px-0 pb-20 md:pt-70px md:pb-150px text-white bg-black">
         <div className=" max-w-1920px w-full h-full my-0 mx-auto">
-          <div className=" items-center flex-col flex justify-center">
-            <div className=" w-full py-0 pr-0 pl-4">
+          <div className=" items-center flex-col md:flex-row flex justify-center">
+            <div className=" w-full py-0 pr-0 pl-4 md:w-auto md:px-6">
               <div className=" relative block pl-6 mb-5 text-white">
-                <h2 className=" absolute top-24 left-0 pb-10 py-0 px-5 mb-2 text-4xl font-light leading-9">
-                  <div className=" w-24 h-1 mb-2 bg-white absolute left-0 bottom-0 block"></div>
+                <h2 className=" absolute top-24 left-0 pb-10 px-5 md:px-0 mb-10px text-4xl font-light leading-9 before:w-99px before:h-2px before:mb-9px before:bg-white before:absolute before:left-0 before:bottom-0 before:block after:w-11px after:h-11px after:mt-0 after:mr-0 after:mb-1 after:ml-87px after:border-t-2 after:border-r-2 after:border-b-0 after:border-l-0 after:border-solid after:border-white after:rotate-45 after:absolute after:left-0 after:bottom-0 after:block">
                   <strong className=" font-bold">HAZZYS NOW</strong>
-                  <div className=" w-3 h-3 mt-0 mr-0 mb-1 ml-84px border-solid border-t-2 border-r-2 border-b-0 border-l-0 border-white rotate-45 absolute left-0 bottom-0 block"></div>
                 </h2>
                 <i className=" bg-[url('/images/home/promo.jpeg')] w-full flex items-center justify-center px-0 pb-0 pt-full font-bold not-italic bg-no-repeat bg-center bg-cover text-white"></i>
               </div>
-              <div className=" px-5">
-                <h3 className=" p-0 text-left text-3xl font-normal mb-3 leading-9">
+              <div className=" px-5 md:pl-5">
+                <h3 className=" text-left text-3xl font-normal mb-10px leading-9">
                   HAZZYS MAGAZINE
                 </h3>
                 <p className=" mt-1 text-left">
@@ -545,11 +549,11 @@ export function Promo() {
                 </a>
               </div>
             </div>
-            <div className=" w-full flex pt-8 px-5 pb-0 items-start">
-              <a className=" bg-[url('/images/home/promo1.jpeg')] mr-10px mt-87px mb-0 ml-0 w-full py-28.125% px-0 flex items-center justify-center not-italic font-bold bg-no-repeat bg-center bg-cover text-white cursor-pointer">
+            <div className=" w-full md:w-auto flex pt-8 px-5 pb-0 md:pt-2 md:pr-0 md:pb-0 md:pl-52px items-start">
+              <a className=" bg-[url('/images/home/promo1.jpeg')] mr-10px mt-87px mb-0 ml-0 md:mr-5 w-full md:w-155px py-28.125% px-0 flex items-center justify-center not-italic font-bold bg-no-repeat bg-center bg-cover text-white cursor-pointer">
                 <span>리뷰의 모든 것</span>
               </a>
-              <a className=" bg-[url('/images/home/promo2.jpeg')] w-full py-28.125% px-0 flex items-center justify-center not-italic font-bold bg-no-repeat bg-center bg-cover text-white cursor-pointer">
+              <a className=" bg-[url('/images/home/promo2.jpeg')] w-full md:w-155px py-28.125% px-0 flex items-center justify-center not-italic font-bold bg-no-repeat bg-center bg-cover text-white cursor-pointer">
                 <span>H사진관</span>
               </a>
             </div>
@@ -564,10 +568,11 @@ export function Promo() {
 export function Floating() {
   return (
     <>
-      <aside className=" right-2.5 fixed bottom-0 mb-5 z-50">
+      <aside className=" right-2.5 md:right-50px fixed bottom-0 mb-5 z-50">
         <a
           className=" flex items-center justify-center overflow-hidden w-9 h-9 mt-10px border border-solid border-white rounded-50% bg-white cursor-pointer"
           href="https://pf.kakao.com/_wdUuI/chat"
+          target="_blank"
         >
           <i className=" bg-[url('/icons/home/icon-kakao.png')] inline-block w-26px h-26px bg-center bg-cover bg-no-repeat"></i>
           <span className=" sr-only">카카오톡 고객센터</span>
