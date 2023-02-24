@@ -3,6 +3,8 @@ import Image from "next/image";
 import { Inter } from "@next/font/google";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -35,16 +37,113 @@ export function Slider() {
     <>
       <section className=" mb-0 md:mb-50px overflow-hidden w-full">
         <div className=" relative md:overflow-hidden">
-          <div className=" touch-pan-y">
-            <div className=" relative w-full h-full z-0 flex transition-transform box-content">
-              <img
-                width="100%"
-                height="100%"
-                src="/images/home/202302101407120.jpeg"
-                alt="banner"
-              />
-            </div>
-          </div>
+          <Swiper
+            spaceBetween={40}
+            slidesPerView={2}
+            onSlideChange={() => console.log("slide change")}
+            onSwiper={(swiper) => console.log(swiper)}
+          >
+            <SwiperSlide>
+              <div class="banner">
+                <a
+                  className=" relative block w-full pt-138.889% md:pt-full cursor-pointer before:absolute before:inset-0 before:z-10 before:bg-rgba"
+                  href="/"
+                >
+                  <img
+                    className=" absolute top-0 left-0 w-full h-full z-0 object-cover"
+                    src="/images/home/202302101407120.jpeg"
+                    alt="배너 제목"
+                  />
+                </a>
+                <a
+                  className=" absolute bottom-10 left-0 py-0 px-5 z-20 cursor-pointer md:bottom-120px"
+                  href="/"
+                >
+                  <p className=" translate-y-0 opacity-100 w-260px text-white text-4xl font-bold leading-9 delay-150 ease-linear duration-150">
+                    CHANGE OF SEASON -
+                  </p>
+                  <p className=" translate-y-0 opacity-100 mt-1 text-white text-base font-normal delay-150 ease-linear duration-150">
+                    간절기 퀼팅아우터 l 닷컴 특가 20%
+                  </p>
+                </a>
+              </div>
+            </SwiperSlide>
+            <SwiperSlide>
+              <div class="banner">
+                <a
+                  className=" relative block w-full pt-138.889% md:pt-full cursor-pointer before:absolute before:inset-0 before:z-10 before:bg-rgba"
+                  href="/"
+                >
+                  <img
+                    className=" absolute top-0 left-0 w-full h-full z-0 object-cover"
+                    src="/images/home/202302101407120.jpeg"
+                    alt="배너 제목"
+                  />
+                </a>
+                <a
+                  className=" absolute bottom-10 left-0 py-0 px-5 z-20 cursor-pointer md:bottom-120px"
+                  href="/"
+                >
+                  <p className=" translate-y-0 opacity-100 w-260px text-white text-4xl font-bold leading-9 delay-150 ease-linear duration-150">
+                    CHANGE OF SEASON -
+                  </p>
+                  <p className=" translate-y-0 opacity-100 mt-1 text-white text-base font-normal delay-150 ease-linear duration-150">
+                    간절기 퀼팅아우터 l 닷컴 특가 20%
+                  </p>
+                </a>
+              </div>
+            </SwiperSlide>
+            <SwiperSlide>
+              <div class="banner">
+                <a
+                  className=" relative block w-full pt-138.889% md:pt-full cursor-pointer before:absolute before:inset-0 before:z-10 before:bg-rgba"
+                  href="/"
+                >
+                  <img
+                    className=" absolute top-0 left-0 w-full h-full z-0 object-cover"
+                    src="/images/home/202302101407120.jpeg"
+                    alt="배너 제목"
+                  />
+                </a>
+                <a
+                  className=" absolute bottom-10 left-0 py-0 px-5 z-20 cursor-pointer md:bottom-120px"
+                  href="/"
+                >
+                  <p className=" translate-y-0 opacity-100 w-260px text-white text-4xl font-bold leading-9 delay-150 ease-linear duration-150">
+                    CHANGE OF SEASON -
+                  </p>
+                  <p className=" translate-y-0 opacity-100 mt-1 text-white text-base font-normal delay-150 ease-linear duration-150">
+                    간절기 퀼팅아우터 l 닷컴 특가 20%
+                  </p>
+                </a>
+              </div>
+            </SwiperSlide>
+            <SwiperSlide>
+              <div class="banner">
+                <a
+                  className=" relative block w-full pt-138.889% md:pt-full cursor-pointer before:absolute before:inset-0 before:z-10 before:bg-rgba"
+                  href="/"
+                >
+                  <img
+                    className=" absolute top-0 left-0 w-full h-full z-0 object-cover"
+                    src="/images/home/202302101407120.jpeg"
+                    alt="배너 제목"
+                  />
+                </a>
+                <a
+                  className=" absolute bottom-10 left-0 py-0 px-5 z-20 cursor-pointer md:bottom-120px"
+                  href="/"
+                >
+                  <p className=" translate-y-0 opacity-100 w-260px text-white text-4xl font-bold leading-9 delay-150 ease-linear duration-150">
+                    CHANGE OF SEASON -
+                  </p>
+                  <p className=" translate-y-0 opacity-100 mt-1 text-white text-base font-normal delay-150 ease-linear duration-150">
+                    간절기 퀼팅아우터 l 닷컴 특가 20%
+                  </p>
+                </a>
+              </div>
+            </SwiperSlide>
+          </Swiper>
         </div>
       </section>
     </>

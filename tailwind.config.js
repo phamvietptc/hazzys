@@ -24,6 +24,7 @@ module.exports = {
         "13.5%": "13.5%",
         "70px": "70px",
         "150px": "150px",
+        "138.889%": "138.889%",
       },
       margin: {
         "10px": "10px",
@@ -58,6 +59,7 @@ module.exports = {
         "99px": "99px",
         "11px": "11px",
         "155px": "155px",
+        "260px": "260px",
       },
       minWidth: {
         "580px": "580px",
@@ -104,6 +106,7 @@ module.exports = {
         "8.4854014599%": "8.4854014599%",
         "50px": "50px",
         "59px": "59px",
+        "120px": "120px",
       },
       boxShadow: {
         "0px24px20px": "0px 24px 20px rgb(0 0 0 / 10%)",
@@ -114,6 +117,9 @@ module.exports = {
       lineHeight: {
         835: ".835",
         "60px": "60px",
+      },
+      colors: {
+        rgba: "rgba(0,0,0,.1)",
       },
     },
   },
