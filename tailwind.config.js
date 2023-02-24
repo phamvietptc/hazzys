@@ -25,6 +25,7 @@ module.exports = {
         "70px": "70px",
         "150px": "150px",
         "138.889%": "138.889%",
+        "129%": "129%",
       },
       margin: {
         "10px": "10px",
@@ -107,6 +108,8 @@ module.exports = {
         "50px": "50px",
         "59px": "59px",
         "120px": "120px",
+        "125%": "125%",
+        "10px": "10px",
       },
       boxShadow: {
         "0px24px20px": "0px 24px 20px rgb(0 0 0 / 10%)",
@@ -120,6 +123,7 @@ module.exports = {
       },
       colors: {
         rgba: "rgba(0,0,0,.1)",
+        rgba33: "rgba(33,33,33,.3)",
       },
     },
   },

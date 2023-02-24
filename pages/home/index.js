@@ -33,6 +33,33 @@ export default function Home() {
 
 // slider
 export function Slider() {
+  const defaultSlider = [
+    {
+      link: "/",
+      image: "/images/home/202302101407120.jpeg",
+      title: "CHANGE OF SEASON -",
+      introduce: "간절기 퀼팅아우터 l 닷컴 특가 20%",
+    },
+    {
+      link: "/",
+      image: "/images/home/202302101407120.jpeg",
+      title: "CHANGE OF SEASON -",
+      introduce: "간절기 퀼팅아우터 l 닷컴 특가 20%",
+    },
+    {
+      link: "/",
+      image: "/images/home/202302101407120.jpeg",
+      title: "CHANGE OF SEASON -",
+      introduce: "간절기 퀼팅아우터 l 닷컴 특가 20%",
+    },
+    {
+      link: "/",
+      image: "/images/home/202302101407120.jpeg",
+      title: "CHANGE OF SEASON -",
+      introduce: "간절기 퀼팅아우터 l 닷컴 특가 20%",
+    },
+  ];
+
   return (
     <>
       <section className=" mb-0 md:mb-50px overflow-hidden w-full">
@@ -43,106 +70,33 @@ export function Slider() {
             onSlideChange={() => console.log("slide change")}
             onSwiper={(swiper) => console.log(swiper)}
           >
-            <SwiperSlide>
-              <div class="banner">
-                <a
-                  className=" relative block w-full pt-138.889% md:pt-full cursor-pointer before:absolute before:inset-0 before:z-10 before:bg-rgba"
-                  href="/"
-                >
-                  <img
-                    className=" absolute top-0 left-0 w-full h-full z-0 object-cover"
-                    src="/images/home/202302101407120.jpeg"
-                    alt="배너 제목"
-                  />
-                </a>
-                <a
-                  className=" absolute bottom-10 left-0 py-0 px-5 z-20 cursor-pointer md:bottom-120px"
-                  href="/"
-                >
-                  <p className=" translate-y-0 opacity-100 w-260px text-white text-4xl font-bold leading-9 delay-150 ease-linear duration-150">
-                    CHANGE OF SEASON -
-                  </p>
-                  <p className=" translate-y-0 opacity-100 mt-1 text-white text-base font-normal delay-150 ease-linear duration-150">
-                    간절기 퀼팅아우터 l 닷컴 특가 20%
-                  </p>
-                </a>
-              </div>
-            </SwiperSlide>
-            <SwiperSlide>
-              <div class="banner">
-                <a
-                  className=" relative block w-full pt-138.889% md:pt-full cursor-pointer before:absolute before:inset-0 before:z-10 before:bg-rgba"
-                  href="/"
-                >
-                  <img
-                    className=" absolute top-0 left-0 w-full h-full z-0 object-cover"
-                    src="/images/home/202302101407120.jpeg"
-                    alt="배너 제목"
-                  />
-                </a>
-                <a
-                  className=" absolute bottom-10 left-0 py-0 px-5 z-20 cursor-pointer md:bottom-120px"
-                  href="/"
-                >
-                  <p className=" translate-y-0 opacity-100 w-260px text-white text-4xl font-bold leading-9 delay-150 ease-linear duration-150">
-                    CHANGE OF SEASON -
-                  </p>
-                  <p className=" translate-y-0 opacity-100 mt-1 text-white text-base font-normal delay-150 ease-linear duration-150">
-                    간절기 퀼팅아우터 l 닷컴 특가 20%
-                  </p>
-                </a>
-              </div>
-            </SwiperSlide>
-            <SwiperSlide>
-              <div class="banner">
-                <a
-                  className=" relative block w-full pt-138.889% md:pt-full cursor-pointer before:absolute before:inset-0 before:z-10 before:bg-rgba"
-                  href="/"
-                >
-                  <img
-                    className=" absolute top-0 left-0 w-full h-full z-0 object-cover"
-                    src="/images/home/202302101407120.jpeg"
-                    alt="배너 제목"
-                  />
-                </a>
-                <a
-                  className=" absolute bottom-10 left-0 py-0 px-5 z-20 cursor-pointer md:bottom-120px"
-                  href="/"
-                >
-                  <p className=" translate-y-0 opacity-100 w-260px text-white text-4xl font-bold leading-9 delay-150 ease-linear duration-150">
-                    CHANGE OF SEASON -
-                  </p>
-                  <p className=" translate-y-0 opacity-100 mt-1 text-white text-base font-normal delay-150 ease-linear duration-150">
-                    간절기 퀼팅아우터 l 닷컴 특가 20%
-                  </p>
-                </a>
-              </div>
-            </SwiperSlide>
-            <SwiperSlide>
-              <div class="banner">
-                <a
-                  className=" relative block w-full pt-138.889% md:pt-full cursor-pointer before:absolute before:inset-0 before:z-10 before:bg-rgba"
-                  href="/"
-                >
-                  <img
-                    className=" absolute top-0 left-0 w-full h-full z-0 object-cover"
-                    src="/images/home/202302101407120.jpeg"
-                    alt="배너 제목"
-                  />
-                </a>
-                <a
-                  className=" absolute bottom-10 left-0 py-0 px-5 z-20 cursor-pointer md:bottom-120px"
-                  href="/"
-                >
-                  <p className=" translate-y-0 opacity-100 w-260px text-white text-4xl font-bold leading-9 delay-150 ease-linear duration-150">
-                    CHANGE OF SEASON -
-                  </p>
-                  <p className=" translate-y-0 opacity-100 mt-1 text-white text-base font-normal delay-150 ease-linear duration-150">
-                    간절기 퀼팅아우터 l 닷컴 특가 20%
-                  </p>
-                </a>
-              </div>
-            </SwiperSlide>
+            {defaultSlider.map((item, index) => (
+              <SwiperSlide key={index}>
+                <div class="banner">
+                  <a
+                    className=" relative block w-full pt-138.889% md:pt-full cursor-pointer before:absolute before:inset-0 before:z-10 before:bg-rgba"
+                    href={item.link}
+                  >
+                    <img
+                      className=" absolute top-0 left-0 w-full h-full z-0 object-cover"
+                      src={item.image}
+                      alt="배너 제목"
+                    />
+                  </a>
+                  <a
+                    className=" absolute bottom-10 left-0 py-0 px-5 z-20 cursor-pointer md:bottom-120px"
+                    href={item.link}
+                  >
+                    <p className=" translate-y-0 opacity-100 w-260px text-white text-4xl font-bold leading-9 delay-150 ease-linear duration-150">
+                      {item.title}
+                    </p>
+                    <p className=" translate-y-0 opacity-100 mt-1 text-white text-base font-normal delay-150 ease-linear duration-150">
+                      {item.introduce}
+                    </p>
+                  </a>
+                </div>
+              </SwiperSlide>
+            ))}
           </Swiper>
         </div>
       </section>
@@ -279,6 +233,63 @@ export function New() {
     },
   ];
 
+  const cardNew = [
+    {
+      image: "/images/home/HUGF3E990BK_00.jpeg",
+      linkCard: "/",
+      label: "HAZZYS MEN",
+      name: "[HIS] [아벨] 오버핏 워크자켓",
+      sale: "186,480",
+      price: "259,000",
+      ratio: "28%",
+    },
+    {
+      image: "/images/home/HUGF3E990BK_00.jpeg",
+      linkCard: "/",
+      label: "HAZZYS MEN",
+      name: "[HIS] [아벨] 오버핏 워크자켓",
+      sale: "186,480",
+      price: "259,000",
+      ratio: "28%",
+    },
+    {
+      image: "/images/home/HUGF3E990BK_00.jpeg",
+      linkCard: "/",
+      label: "HAZZYS MEN",
+      name: "[HIS] [아벨] 오버핏 워크자켓",
+      sale: "186,480",
+      price: "259,000",
+      ratio: "28%",
+    },
+    {
+      image: "/images/home/HUGF3E990BK_00.jpeg",
+      linkCard: "/",
+      label: "HAZZYS MEN",
+      name: "[HIS] [아벨] 오버핏 워크자켓",
+      sale: "186,480",
+      price: "259,000",
+      ratio: "28%",
+    },
+    {
+      image: "/images/home/HUGF3E990BK_00.jpeg",
+      linkCard: "/",
+      label: "HAZZYS MEN",
+      name: "[HIS] [아벨] 오버핏 워크자켓",
+      sale: "186,480",
+      price: "259,000",
+      ratio: "28%",
+    },
+    {
+      image: "/images/home/HUGF3E990BK_00.jpeg",
+      linkCard: "/",
+      label: "HAZZYS MEN",
+      name: "[HIS] [아벨] 오버핏 워크자켓",
+      sale: "186,480",
+      price: "259,000",
+      ratio: "28%",
+    },
+  ];
+
   return (
     <>
       <section className=" mb-24 md:mb-150px">
@@ -311,16 +322,48 @@ export function New() {
           ))}
         </div>
         <div className=" flex-nowrap flex">
-          <div className=" mx-auto relative overflow-hidden list-none z-0">
-            <div class="swiper-wrapper">
-              <img
-                width="348px"
-                height="441px"
-                src="/images/home/HUGF3E990BK_00.jpeg"
-                alt="product"
-              />
-            </div>
-          </div>
+          <Swiper
+            spaceBetween={20}
+            slidesPerView={5}
+            onSlideChange={() => console.log("slide change")}
+            onSwiper={(swiper) => console.log(swiper)}
+          >
+            {cardNew.map((item, index) => (
+              <SwiperSlide key={index}>
+                <div className=" w-full relative overflow-hidden">
+                  <div className=" relative">
+                    <a
+                      className=" relative block pt-129% cursor-pointer"
+                      href={item.linkCard}
+                    >
+                      <img
+                        className=" absolute top-0 w-full object-cover"
+                        src={item.image}
+                        alt="product"
+                      />
+                    </a>
+                  </div>
+                  <div className=" pt-5 px-5 pb-0 cursor-pointer md:px-0">
+                    <p className=" text-black">{item.label}</p>
+                    <p className=" text-black max-h-5 overflow-hidden text-ellipsis">
+                      {item.name}
+                    </p>
+                    <div className=" flex-row items-center flex justify-between mt-10px">
+                      <p className=" mb-1 font-bold text-black md:m-0">
+                        {item.sale}
+                      </p>
+                      <p className=" font-normal text-black">
+                        <span className=" mr-1 text-sm text-rgba33 line-through">
+                          {item.price}
+                        </span>
+                        <span className=" text-orange-400">{item.ratio}</span>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
         </div>
       </section>
     </>
@@ -403,6 +446,49 @@ export function Review() {
 
 // key item
 export function KeyItem() {
+  const defaultKeyItem = [
+    {
+      link: "/",
+      image: "/images/home/HZTS3A753E2_00.jpg",
+      name: "그린 퍼피자수 면 후드티셔츠",
+      sale: "197,100",
+      price: "219,000",
+      ratio: "10%",
+    },
+    {
+      link: "/",
+      image: "/images/home/HZTS3A753E2_00.jpg",
+      name: "그린 퍼피자수 면 후드티셔츠",
+      sale: "197,100",
+      price: "219,000",
+      ratio: "10%",
+    },
+    {
+      link: "/",
+      image: "/images/home/HZTS3A753E2_00.jpg",
+      name: "그린 퍼피자수 면 후드티셔츠",
+      sale: "197,100",
+      price: "219,000",
+      ratio: "10%",
+    },
+    {
+      link: "/",
+      image: "/images/home/HZTS3A753E2_00.jpg",
+      name: "그린 퍼피자수 면 후드티셔츠",
+      sale: "197,100",
+      price: "219,000",
+      ratio: "10%",
+    },
+    {
+      link: "/",
+      image: "/images/home/HZTS3A753E2_00.jpg",
+      name: "그린 퍼피자수 면 후드티셔츠",
+      sale: "197,100",
+      price: "219,000",
+      ratio: "10%",
+    },
+  ];
+
   return (
     <>
       <section className=" mb-24 md:mb-150px overflow-hidden w-full">
@@ -440,9 +526,57 @@ export function KeyItem() {
               </div>
             </div>
             <div className=" static w-calc-10px m-calc-147px flex flex-wrap md:top-280px md:w-calc-505px md:absolute md:left-0 md:my-0 md:-mx-10px">
-              <div className=" w-full mx-auto relative overflow-hidden list-none p-0 z-0">
-                <div class=" transform-gpu"></div>
-              </div>
+              <Swiper
+                spaceBetween={20}
+                slidesPerView={4}
+                onSlideChange={() => console.log("slide change")}
+                onSwiper={(swiper) => console.log(swiper)}
+              >
+                {defaultKeyItem.map((item, index) => (
+                  <SwiperSlide key={index}>
+                    <div className=" w-full relative overflow-hidden">
+                      <div className=" relative">
+                        <a
+                          className=" relative block pt-125% cursor-pointer"
+                          href={item.link}
+                        >
+                          <img
+                            className=" absolute top-0 w-full object-cover"
+                            src={item.image}
+                            alt="product"
+                          />
+                        </a>
+                      </div>
+                      <div className=" pt-10px px-0 pb-0 cursor-pointer md:pt-5">
+                        <p
+                          className={`pb-10px max-h-5 overflow-hidden text-ellipsis text-black ${styles.box}`}
+                        >
+                          {item.name}
+                        </p>
+                        <div className=" mt-auto items-start flex-col justify-between md:flex">
+                          <p className=" mb-1 md:m-0 font-bold text-black">
+                            {item.sale}
+                          </p>
+                          <p className=" font-normal text-black">
+                            <span className=" mr-1 text-sm text-rgba33 line-through">
+                              {item.price}
+                            </span>
+                            <span className=" text-orange-500">
+                              {item.ratio}
+                            </span>
+                          </p>
+                        </div>
+                        <a
+                          className=" absolute top-10px right-10px z-10 opacity-40 flex items-center overflow-hidden w-7 h-7 -indent-96 bg-no-repeat bg-center cursor-pointer bg-[url('/icons/home/icon-heart.png')]"
+                          href="#"
+                        >
+                          heart
+                        </a>
+                      </div>
+                    </div>
+                  </SwiperSlide>
+                ))}
+              </Swiper>
             </div>
           </div>
         </div>
@@ -453,6 +587,49 @@ export function KeyItem() {
 
 //item
 export function Item() {
+  const defaultItem = [
+    {
+      link: "/",
+      image: "/images/home/HZTS2D385BK_00.jpg",
+      name: "블랙 퍼피자수 면혼방 반집업티셔츠",
+      sale: "125,370",
+      price: "199,000",
+      ratio: "37%",
+    },
+    {
+      link: "/",
+      image: "/images/home/HZTS2D385BK_00.jpg",
+      name: "블랙 퍼피자수 면혼방 반집업티셔츠",
+      sale: "125,370",
+      price: "199,000",
+      ratio: "37%",
+    },
+    {
+      link: "/",
+      image: "/images/home/HZTS2D385BK_00.jpg",
+      name: "블랙 퍼피자수 면혼방 반집업티셔츠",
+      sale: "125,370",
+      price: "199,000",
+      ratio: "37%",
+    },
+    {
+      link: "/",
+      image: "/images/home/HZTS2D385BK_00.jpg",
+      name: "블랙 퍼피자수 면혼방 반집업티셔츠",
+      sale: "125,370",
+      price: "199,000",
+      ratio: "37%",
+    },
+    {
+      link: "/",
+      image: "/images/home/HZTS2D385BK_00.jpg",
+      name: "블랙 퍼피자수 면혼방 반집업티셔츠",
+      sale: "125,370",
+      price: "199,000",
+      ratio: "37%",
+    },
+  ];
+
   return (
     <>
       <section className=" mb-24 md:mb-150px overflow-hidden w-full">
@@ -489,9 +666,57 @@ export function Item() {
               </div>
             </div>
             <div className=" static w-calc-10px m-calc-147px flex flex-wrap md:absolute md:top-340px md:left-0 md:w-63.125% md:my-0 md:-mx-10px">
-              <div className=" w-full mx-auto relative overflow-hidden list-none p-0 z-0">
-                <div class=" transform-gpu"></div>
-              </div>
+              <Swiper
+                spaceBetween={20}
+                slidesPerView={4}
+                onSlideChange={() => console.log("slide change")}
+                onSwiper={(swiper) => console.log(swiper)}
+              >
+                {defaultItem.map((item, index) => (
+                  <SwiperSlide key={index}>
+                    <div className=" w-full relative overflow-hidden">
+                      <div className=" relative">
+                        <a
+                          className=" relative block pt-125% cursor-pointer"
+                          href={item.link}
+                        >
+                          <img
+                            className=" absolute top-0 w-full object-cover"
+                            src={item.image}
+                            alt="product"
+                          />
+                        </a>
+                      </div>
+                      <div className=" pt-10px px-0 pb-0 cursor-pointer md:pt-5">
+                        <p
+                          className={`pb-10px max-h-5 overflow-hidden text-ellipsis text-black ${styles.box}`}
+                        >
+                          {item.name}
+                        </p>
+                        <div className=" mt-auto items-start flex-col justify-between md:flex">
+                          <p className=" mb-1 md:m-0 font-bold text-black">
+                            {item.sale}
+                          </p>
+                          <p className=" font-normal text-black">
+                            <span className=" mr-1 text-sm text-rgba33 line-through">
+                              {item.price}
+                            </span>
+                            <span className=" text-orange-500">
+                              {item.ratio}
+                            </span>
+                          </p>
+                        </div>
+                        <a
+                          className=" absolute top-10px right-10px z-10 opacity-40 flex items-center overflow-hidden w-7 h-7 -indent-96 bg-no-repeat bg-center cursor-pointer bg-[url('/icons/home/icon-heart.png')]"
+                          href="#"
+                        >
+                          heart
+                        </a>
+                      </div>
+                    </div>
+                  </SwiperSlide>
+                ))}
+              </Swiper>
             </div>
           </div>
         </div>
