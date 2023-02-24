@@ -39,7 +39,7 @@ module.exports = {
         "100px": "100px",
         "68px": "68px",
         "calc-147px": "-147px -5px 0 calc(5.56% + 15px)",
-        "600px": "600px",
+        "630px": "630px",
         "9px": "9px",
       },
       borderRadius: {
@@ -82,6 +82,7 @@ module.exports = {
         "980px": "980px",
         "2px": "2px",
         "11px": "11px",
+        "121px": "121px",
       },
       minHeight: {
         full: "100%",
@@ -102,6 +103,7 @@ module.exports = {
         "57.0833333333%": "57.0833333333%",
         "8.4854014599%": "8.4854014599%",
         "50px": "50px",
+        "59px": "59px",
       },
       boxShadow: {
         "0px24px20px": "0px 24px 20px rgb(0 0 0 / 10%)",

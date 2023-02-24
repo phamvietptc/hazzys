@@ -202,7 +202,7 @@ export function New() {
             >
               <li className=" h-auto py-4 px-3 border-b-0 flex items-center justify-center flex-1 list-outside list-none">
                 <a
-                  className=" inline-block py-2 px-3 text-black whitespace-nowrap cursor-pointer hover:font-bold hover:text-orange-500"
+                  className=" inline-block py-2 px-3 text-black whitespace-nowrap cursor-pointer active:hover:font-bold active:hover:text-orange-500"
                   href={item.link}
                 >
                   {item.text}
@@ -423,7 +423,7 @@ export function KeyWord() {
                 <i className=" bg-[url('/images/home/keyword.jpeg')] hidden absolute top-0 left-0 bottom-0 w-2/3 bg-no-repeat bg-center bg-cover grayscale opacity-30 z-0 md:block md:h-980px"></i>
               </a>
             </div>
-            <div className=" max-w-full mt-5 md:max-w-330px md:mt-600px">
+            <div className=" max-w-full mt-5 md:max-w-330px md:mt-630px">
               <h3 className=" text-left text-2xl font-sans font-normal mb-3 leading-9 text-black md:text-3xl">
                 하나의 가방으로 세 가지 기능을
               </h3>
