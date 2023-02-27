@@ -5,6 +5,19 @@ module.exports = {
   purge: ["./pages/**/*.{js,ts,jsx,tsx}", "./components/**/*.{js,ts,jsx,tsx}"],
   darkMode: false, // or 'media' or 'class'
   theme: {
+    fontSize: {
+      "2.85": ['2.8571428571rem', {
+        lineHeight: '1.5',
+        letterSpacing: '-0.3px',
+        fontWeight: '400',
+      }],
+      "3.5": ['3.5714285714rem', {
+        lineHeight: '1.5',
+        letterSpacing: '-0.3px',
+        fontWeight: '400',
+      }],
+    },
+
     extend: {
       padding: {
         full: "100%",
@@ -26,6 +39,9 @@ module.exports = {
         "150px": "150px",
         "138.889%": "138.889%",
         "129%": "129%",
+        "2px": "2px",
+        "14px": "14px",
+        "5px": "5px",
       },
       margin: {
         "10px": "10px",
@@ -43,6 +59,8 @@ module.exports = {
         "calc-147px": "-147px -5px 0 calc(5.56% + 15px)",
         "630px": "630px",
         "9px": "9px",
+        "5px": "5px",
+        "3px": "3px",
       },
       borderRadius: {
         "50%": "50%",
@@ -61,9 +79,16 @@ module.exports = {
         "11px": "11px",
         "155px": "155px",
         "260px": "260px",
+        "52.63%": "52.63%",
+        "47.37%": "47.37%",
+        "6px": "6px",
+        "98px": "98px",
+        "72px": "72px",
       },
       minWidth: {
         "580px": "580px",
+        "80px": "80px",
+        "98px": "98px",
       },
       maxWidth: {
         "1920px": "1920px",
@@ -71,6 +96,7 @@ module.exports = {
         "591px": "591px",
         "500px": "500px",
         "330px": "330px",
+        "876px": "876px",
       },
       height: {
         "26px": "26px",
@@ -86,10 +112,14 @@ module.exports = {
         "2px": "2px",
         "11px": "11px",
         "121px": "121px",
+        "6px": "6px",
       },
       minHeight: {
         full: "100%",
         "60px": "60px",
+      },
+      maxHeight: {
+        "21px": "21px",
       },
       backgroundSize: {
         "24px": "24px",
@@ -110,6 +140,7 @@ module.exports = {
         "120px": "120px",
         "125%": "125%",
         "10px": "10px",
+        "54px": "54px",
       },
       boxShadow: {
         "0px24px20px": "0px 24px 20px rgb(0 0 0 / 10%)",

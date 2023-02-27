@@ -4,7 +4,9 @@ import { Inter } from "@next/font/google";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination } from "swiper";
 import "swiper/css";
+import "swiper/css/pagination";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -345,7 +347,9 @@ export function New() {
                   </div>
                   <div className=" pt-5 px-5 pb-0 cursor-pointer md:px-0">
                     <p className=" text-black">{item.label}</p>
-                    <p className=" text-black max-h-5 overflow-hidden text-ellipsis">
+                    <p
+                      className={` text-black max-h-5 overflow-hidden text-ellipsis ${styles.box}`}
+                    >
                       {item.name}
                     </p>
                     <div className=" flex-row items-center flex justify-between mt-10px">
@@ -391,6 +395,45 @@ export function Review() {
     },
   ];
 
+  const listReview = [
+    {
+      image: "/images/home/202302270948390.jpeg",
+      link: "/",
+      intro:
+        "172/64 인데 s가 딱 (제 기준에서) 적당한 세미오버핏 같아요! 퀄리티는 딱 보기에도 좋고, 특유의 오프 패턴 너무 맘에 들어요. 헤지스에서 이런 클래식한 블레이져도 만드...",
+      productImg: "images/home/HZJA2F801W2_00.jpeg",
+      label: "HAZZYS MEN",
+      name: "[HIS] [험프리] 울 체크 자켓",
+      sale: "228,730",
+      price: "299,000",
+      ratio: "23%",
+    },
+    {
+      image: "/images/home/202302270948390.jpeg",
+      link: "/",
+      intro:
+        "172/64 인데 s가 딱 (제 기준에서) 적당한 세미오버핏 같아요! 퀄리티는 딱 보기에도 좋고, 특유의 오프 패턴 너무 맘에 들어요. 헤지스에서 이런 클래식한 블레이져도 만드...",
+      productImg: "images/home/HZJA2F801W2_00.jpeg",
+      label: "HAZZYS MEN",
+      name: "[HIS] [험프리] 울 체크 자켓",
+      sale: "228,730",
+      price: "299,000",
+      ratio: "23%",
+    },
+    {
+      image: "/images/home/202302270948390.jpeg",
+      link: "/",
+      intro:
+        "172/64 인데 s가 딱 (제 기준에서) 적당한 세미오버핏 같아요! 퀄리티는 딱 보기에도 좋고, 특유의 오프 패턴 너무 맘에 들어요. 헤지스에서 이런 클래식한 블레이져도 만드...",
+      productImg: "images/home/HZJA2F801W2_00.jpeg",
+      label: "HAZZYS MEN",
+      name: "[HIS] [험프리] 울 체크 자켓",
+      sale: "228,730",
+      price: "299,000",
+      ratio: "23%",
+    },
+  ];
+
   return (
     <>
       <section className=" mb-24 md:mb-100px">
@@ -424,11 +467,70 @@ export function Review() {
             </ul>
           </div>
           <div className=" pb-10 md:pb-60px flex justify-center">
-            <div className=" touch-pan-y w-full md:w-auto pt-0 pb-10 px-4 md:p-0 mx-auto relative overflow-hidden list-none z-0">
-              <div class="swiper-wrapper">
-                <img src="/images/home/review.png" alt="slide" />
-              </div>
-            </div>
+            <Swiper
+              spaceBetween={20}
+              slidesPerView={1.6}
+              onSlideChange={() => console.log("slide change")}
+              onSwiper={(swiper) => console.log(swiper)}
+            >
+              {listReview.map((item, index) => (
+                <SwiperSlide key={index}>
+                  <div className=" flex-col md:flex-row md:flex-1 max-w-full py-0 px-1 flex md:max-w-876px md:px-5">
+                    <div className=" w-full md:w-52.63%">
+                      <figure className=" relative">
+                        {/* <span className=" border-slate-100 border-solid border text-black bg-white absolute right-0 bottom-0 py-2px px-1 font-light z-10 flex items-center justify-center h-6 text-sm">hazzys****</span> */}
+                        <img src={item.image} alt="product" />
+                      </figure>
+                    </div>
+                    <div className=" w-full flex flex-col md:w-47.37% md:pt-5 md:pr-0 md:pb-0 md:pl-10">
+                      <div className=" order-2 md:order-none mt-5 mb-auto text-slate-800 font-light">
+                        <a className=" cursor-pointer" href={item.link}>
+                          <p>{item.intro}</p>
+                        </a>
+                      </div>
+                      <div className=" order-1 md:order-none">
+                        <a
+                          className=" pb-14px flex items-center pt-5 px-0 md:py-5 text-black cursor-pointer after:inline-block after:w-6px after:h-6px after:ml-5px after:border-solid after:border-black after:border-t after:border-r after:rotate-45"
+                          href="/"
+                        >
+                          구매고객이 착용한 제품 보러가기
+                        </a>
+                        <div className=" flex w-full relative overflow-hidden">
+                          <div className=" w-20 min-w-80px relative md:w-98px md:min-w-98px">
+                            <a className=" cursor-pointer" href={item.link}>
+                              <img src={item.productImg} />
+                            </a>
+                          </div>
+                          <div className=" py-1 pr-0 pl-5 md:py-2 flex flex-col cursor-pointer">
+                            <a href="/">
+                              <p className=" text-slate-800">{item.label}</p>
+                              <p
+                                className={` text-slate-800 pb-5px max-h-21px overflow-hidden ${styles.box}`}
+                              >
+                                {item.name}
+                              </p>
+                              <div className=" mt-auto items-start flex-col flex justify-between">
+                                <p className=" text-slate-800 font-bold mb-3px md:m-0">
+                                  {item.sale}
+                                </p>
+                                <p className=" font-normal">
+                                  <span className=" mr-5px text-sm text-rgba33 line-through">
+                                    {item.price}
+                                  </span>
+                                  <span className=" text-orange-500">
+                                    {item.ratio}
+                                  </span>
+                                </p>
+                              </div>
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </SwiperSlide>
+              ))}
+            </Swiper>
           </div>
           <div className=" max-w-xs my-0 mx-auto relative">
             <a
@@ -791,6 +893,21 @@ export function Best() {
     },
   ];
 
+  const productPictures = [
+    {
+      link: "/",
+      picture: "images/home/WUWA1F171BK_00.jpeg",
+    },
+    {
+      link: "/",
+      picture: "images/home/WUWA1F171BK_00.jpeg",
+    },
+    {
+      link: "/",
+      picture: "images/home/WUWA1F171BK_00.jpeg",
+    },
+  ];
+
   return (
     <>
       <section className=" mb-24 md:mb-150px">
@@ -823,11 +940,55 @@ export function Best() {
               ))}
             </ul>
           </div>
-          {/* <div className=" flex-nowrap pt-0 px-0 pb-5 flex md:my-0 md:-mx-10px">
-            <div className=" mx-auto relative overflow-hidden list-none z-0">
-              <div class="swiper-wrapper"></div>
-            </div>
-          </div> */}
+          <div className=" flex-nowrap pt-0 px-0 pb-5 flex md:my-0 md:-mx-10px">
+            <Swiper
+              spaceBetween={40}
+              slidesPerView={2}
+              onSlideChange={() => console.log("slide change")}
+              onSwiper={(swiper) => console.log(swiper)}
+            >
+              <SwiperSlide>
+                <div className=" w-full relative overflow-hidden">
+                  <div className=" relative">
+                    <Swiper
+                      modules={[Pagination]}
+                      spaceBetween={0}
+                      slidesPerView={1}
+                      pagination={{ clickable: true }}
+                      onSlideChange={() => console.log("slide change")}
+                      onSwiper={(swiper) => console.log(swiper)}
+                    >
+                      {productPictures.map((item, index) => (
+                        <SwiperSlide key={index}>
+                          <a
+                            className=" pt-129% relative block overflow-hidden w-full cursor-pointer"
+                            href={item.link}
+                          >
+                            <img
+                              className=" object-cover absolute top-0 left-1/2 h-full -translate-x-1/2"
+                              src={item.picture}
+                              alt="product"
+                            />
+                          </a>
+                        </SwiperSlide>
+                      ))}
+                    </Swiper>
+                    <div className=" relative pt-2 pr-4 pb-9 pl-5 md:pt-5 md:pr-0 md:pb-10 md:pl-20 cursor-pointer">
+                      <i className=" top-54px md:top-5 left-5 md:left-0 w-auto md:w-72px h-10 md:h-60px text-black text-2.85 md:text-3.5 absolute flex items-center justify-center">1</i>
+                      <p className="">HAZZYS ACC</p>
+                      <p className={` max-h-5 overflow-hidden ${styles.box}`}>[populet]블랙 퍼피장식 소가죽 반지갑</p>
+                      <div className=" block text-right ml-10 md:ml-0 mt-1 md:flex md:items-center md:justify-between">
+                        <p className=" font-bold mb-3px md:m-0">57,600</p>
+                        <p className=" font-normal">
+                          <span className=" mr-5px text-sm"></span>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </SwiperSlide>
+            </Swiper>
+          </div>
           <div className=" max-w-xs my-0 mx-auto relative block">
             <a
               className=" text-black bg-white border border-solid border-gray-800 flex items-center justify-center w-full h-12 text-base font-bold cursor-pointer hover:bg-black hover:text-white"
