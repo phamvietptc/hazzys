@@ -4,9 +4,10 @@ import { Inter } from "@next/font/google";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination } from "swiper";
+import { Navigation, Scrollbar } from "swiper";
 import "swiper/css";
-import "swiper/css/pagination";
+import "swiper/css/scrollbar";
+import "swiper/css/navigation";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -67,13 +68,15 @@ export function Slider() {
       <section className=" mb-0 md:mb-50px overflow-hidden w-full">
         <div className=" relative md:overflow-hidden">
           <Swiper
+            modules={[Scrollbar]}
+            scrollbar={{ draggable: true }}
             spaceBetween={40}
             slidesPerView={2}
             onSlideChange={() => console.log("slide change")}
             onSwiper={(swiper) => console.log(swiper)}
           >
             {defaultSlider.map((item, index) => (
-              <SwiperSlide key={index}>
+              <SwiperSlide role="group" aria-label={index} key={index}>
                 <div class="banner">
                   <a
                     className=" relative block w-full pt-138.889% md:pt-full cursor-pointer before:absolute before:inset-0 before:z-10 before:bg-rgba"
@@ -331,7 +334,7 @@ export function New() {
             onSwiper={(swiper) => console.log(swiper)}
           >
             {cardNew.map((item, index) => (
-              <SwiperSlide key={index}>
+              <SwiperSlide role="group" aria-label={index} key={index}>
                 <div className=" w-full relative overflow-hidden">
                   <div className=" relative">
                     <a
@@ -469,12 +472,12 @@ export function Review() {
           <div className=" pb-10 md:pb-60px flex justify-center">
             <Swiper
               spaceBetween={20}
-              slidesPerView={1.6}
+              slidesPerView={1.55}
               onSlideChange={() => console.log("slide change")}
               onSwiper={(swiper) => console.log(swiper)}
             >
               {listReview.map((item, index) => (
-                <SwiperSlide key={index}>
+                <SwiperSlide role="group" aria-label={index} key={index}>
                   <div className=" flex-col md:flex-row md:flex-1 max-w-full py-0 px-1 flex md:max-w-876px md:px-5">
                     <div className=" w-full md:w-52.63%">
                       <figure className=" relative">
@@ -629,13 +632,15 @@ export function KeyItem() {
             </div>
             <div className=" static w-calc-10px m-calc-147px flex flex-wrap md:top-280px md:w-calc-505px md:absolute md:left-0 md:my-0 md:-mx-10px">
               <Swiper
+                modules={[Navigation]}
+                navigation
                 spaceBetween={20}
                 slidesPerView={4}
                 onSlideChange={() => console.log("slide change")}
                 onSwiper={(swiper) => console.log(swiper)}
               >
                 {defaultKeyItem.map((item, index) => (
-                  <SwiperSlide key={index}>
+                  <SwiperSlide role="group" aria-label={index} key={index}>
                     <div className=" w-full relative overflow-hidden">
                       <div className=" relative">
                         <a
@@ -769,13 +774,15 @@ export function Item() {
             </div>
             <div className=" static w-calc-10px m-calc-147px flex flex-wrap md:absolute md:top-340px md:left-0 md:w-63.125% md:my-0 md:-mx-10px">
               <Swiper
+                modules={[Navigation]}
+                navigation
                 spaceBetween={20}
                 slidesPerView={4}
                 onSlideChange={() => console.log("slide change")}
                 onSwiper={(swiper) => console.log(swiper)}
               >
                 {defaultItem.map((item, index) => (
-                  <SwiperSlide key={index}>
+                  <SwiperSlide role="group" aria-label={index} key={index}>
                     <div className=" w-full relative overflow-hidden">
                       <div className=" relative">
                         <a
@@ -893,6 +900,57 @@ export function Best() {
     },
   ];
 
+  const productSlider = [
+    {
+      number: "1",
+      label: "HAZZYS ACC",
+      name: "[populet]블랙 퍼피장식 소가죽 반지갑",
+      sale: "57,600",
+      price: "158,000",
+      ratio: "40%",
+    },
+    {
+      number: "2",
+      label: "HAZZYS ACC",
+      name: "[populet]블랙 퍼피장식 소가죽 반지갑",
+      sale: "57,600",
+      price: "158,000",
+      ratio: "40%",
+    },
+    {
+      number: "3",
+      label: "HAZZYS ACC",
+      name: "[populet]블랙 퍼피장식 소가죽 반지갑",
+      sale: "57,600",
+      price: "158,000",
+      ratio: "40%",
+    },
+    {
+      number: "4",
+      label: "HAZZYS ACC",
+      name: "[populet]블랙 퍼피장식 소가죽 반지갑",
+      sale: "57,600",
+      price: "158,000",
+      ratio: "40%",
+    },
+    {
+      number: "5",
+      label: "HAZZYS ACC",
+      name: "[populet]블랙 퍼피장식 소가죽 반지갑",
+      sale: "57,600",
+      price: "158,000",
+      ratio: "40%",
+    },
+    {
+      number: "6",
+      label: "HAZZYS ACC",
+      name: "[populet]블랙 퍼피장식 소가죽 반지갑",
+      sale: "57,600",
+      price: "158,000",
+      ratio: "40%",
+    },
+  ];
+
   const productPictures = [
     {
       link: "/",
@@ -942,51 +1000,72 @@ export function Best() {
           </div>
           <div className=" flex-nowrap pt-0 px-0 pb-5 flex md:my-0 md:-mx-10px">
             <Swiper
-              spaceBetween={40}
-              slidesPerView={2}
+              modules={[Navigation]}
+              spaceBetween={20}
+              slidesPerView={4.5}
+              navigation
               onSlideChange={() => console.log("slide change")}
               onSwiper={(swiper) => console.log(swiper)}
             >
-              <SwiperSlide>
-                <div className=" w-full relative overflow-hidden">
-                  <div className=" relative">
-                    <Swiper
-                      modules={[Pagination]}
-                      spaceBetween={0}
-                      slidesPerView={1}
-                      pagination={{ clickable: true }}
-                      onSlideChange={() => console.log("slide change")}
-                      onSwiper={(swiper) => console.log(swiper)}
-                    >
-                      {productPictures.map((item, index) => (
-                        <SwiperSlide key={index}>
-                          <a
-                            className=" pt-129% relative block overflow-hidden w-full cursor-pointer"
-                            href={item.link}
+              {productSlider.map((item, index) => (
+                <SwiperSlide role="group" aria-label={index} key={index}>
+                  <div className=" w-full relative overflow-hidden">
+                    <div className=" relative">
+                      <Swiper
+                        modules={[Scrollbar]}
+                        spaceBetween={0}
+                        slidesPerView={1}
+                        scrollbar={{ draggable: true }}
+                        onSlideChange={() => console.log("slide change")}
+                        onSwiper={(swiper) => console.log(swiper)}
+                      >
+                        {productPictures.map((item, index) => (
+                          <SwiperSlide
+                            role="group"
+                            aria-label={index}
+                            key={index}
                           >
-                            <img
-                              className=" object-cover absolute top-0 left-1/2 h-full -translate-x-1/2"
-                              src={item.picture}
-                              alt="product"
-                            />
-                          </a>
-                        </SwiperSlide>
-                      ))}
-                    </Swiper>
-                    <div className=" relative pt-2 pr-4 pb-9 pl-5 md:pt-5 md:pr-0 md:pb-10 md:pl-20 cursor-pointer">
-                      <i className=" top-54px md:top-5 left-5 md:left-0 w-auto md:w-72px h-10 md:h-60px text-black text-2.85 md:text-3.5 absolute flex items-center justify-center">1</i>
-                      <p className="">HAZZYS ACC</p>
-                      <p className={` max-h-5 overflow-hidden ${styles.box}`}>[populet]블랙 퍼피장식 소가죽 반지갑</p>
-                      <div className=" block text-right ml-10 md:ml-0 mt-1 md:flex md:items-center md:justify-between">
-                        <p className=" font-bold mb-3px md:m-0">57,600</p>
-                        <p className=" font-normal">
-                          <span className=" mr-5px text-sm"></span>
+                            <a
+                              className=" pt-129% relative block overflow-hidden w-full cursor-pointer"
+                              href={item.link}
+                            >
+                              <img
+                                className=" object-cover absolute top-0 left-1/2 h-full -translate-x-1/2"
+                                src={item.picture}
+                                alt="product"
+                              />
+                            </a>
+                          </SwiperSlide>
+                        ))}
+                      </Swiper>
+                      <div className=" relative pt-2 pr-4 pb-9 pl-5 md:pt-5 md:pr-0 md:pb-10 md:pl-20 cursor-pointer">
+                        <i className=" top-54px md:top-5 left-5 md:left-0 w-auto md:w-72px h-10 md:h-60px text-black text-2.85 md:text-3.5 absolute flex items-center justify-center">
+                          {item.number}
+                        </i>
+                        <p className=" text-black">{item.label}</p>
+                        <p
+                          className={` text-black max-h-5 overflow-hidden ${styles.box}`}
+                        >
+                          {item.name}
                         </p>
+                        <div className=" block text-right ml-10 md:ml-0 mt-1 md:flex md:items-center md:justify-between">
+                          <p className=" text-black font-bold mb-3px md:m-0">
+                            {item.sale}
+                          </p>
+                          <p className=" font-normal">
+                            <span className=" mr-5px text-sm text-rgba33 line-through">
+                              {item.price}
+                            </span>
+                            <span className=" text-orange-500">
+                              {item.ratio}
+                            </span>
+                          </p>
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
-              </SwiperSlide>
+                </SwiperSlide>
+              ))}
             </Swiper>
           </div>
           <div className=" max-w-xs my-0 mx-auto relative block">
