@@ -5,11 +5,24 @@ import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Scrollbar } from "swiper";
+import React, { useState, useEffect } from 'react';
 import "swiper/css";
 import "swiper/css/scrollbar";
 import "swiper/css/navigation";
 
 const inter = Inter({ subsets: ["latin"] });
+
+const useViewport = () => {
+  const [width, setWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const handleWindowResize = () => setWidth(window.innerWidth);
+    window.addEventListener("resize", handleWindowResize);
+    return () => window.removeEventListener("resize", handleWindowResize);
+  }, []);
+
+  return { width };
+};
 
 export default function Home() {
   return (
@@ -36,6 +49,14 @@ export default function Home() {
 
 // slider
 export function Slider() {
+
+    const { width } = useViewport();
+    const breakpoint = 768;
+    const spaceBetween = width < breakpoint ? 10 : 40;
+    const slidesPerView = width < breakpoint ? 1 : 2;
+  
+
+
   const defaultSlider = [
     {
       link: "/",
@@ -70,8 +91,8 @@ export function Slider() {
           <Swiper
             modules={[Scrollbar]}
             scrollbar={{ draggable: true }}
-            spaceBetween={40}
-            slidesPerView={2}
+            spaceBetween={spaceBetween}
+            slidesPerView={slidesPerView}
             onSlideChange={() => console.log("slide change")}
             onSwiper={(swiper) => console.log(swiper)}
           >
