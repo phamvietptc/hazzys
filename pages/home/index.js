@@ -1,10 +1,11 @@
 import styles from "../../styles/Home.module.css";
-import Image from "next/image";
 import { Inter } from "@next/font/google";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Scrollbar } from "swiper";
+import React from "react";
+import { useDeviceSize } from "@/hooks/useScreenWidth";
 import "swiper/css";
 import "swiper/css/scrollbar";
 import "swiper/css/navigation";
@@ -36,6 +37,11 @@ export default function Home() {
 
 // slider
 export function Slider() {
+  const { width } = useDeviceSize();
+  const breakpoint = 768;
+  const spaceBetween = width < breakpoint ? 0 : 40;
+  const slidesPerView = width < breakpoint ? 1 : 2;
+
   const defaultSlider = [
     {
       link: "/",
@@ -70,8 +76,8 @@ export function Slider() {
           <Swiper
             modules={[Scrollbar]}
             scrollbar={{ draggable: true }}
-            spaceBetween={40}
-            slidesPerView={2}
+            spaceBetween={spaceBetween}
+            slidesPerView={slidesPerView}
             onSlideChange={() => console.log("slide change")}
             onSwiper={(swiper) => console.log(swiper)}
           >
@@ -219,6 +225,11 @@ export function Category() {
 
 // new
 export function New() {
+  const { width } = useDeviceSize();
+  const breakpoint = 768;
+  const spaceBetween = width < breakpoint ? 10 : 20;
+  const slidesPerView = width < breakpoint ? 1 : 4.5;
+
   const defaultNew = [
     {
       link: "/",
@@ -328,8 +339,8 @@ export function New() {
         </div>
         <div className=" flex-nowrap flex">
           <Swiper
-            spaceBetween={20}
-            slidesPerView={5}
+            spaceBetween={spaceBetween}
+            slidesPerView={slidesPerView}
             onSlideChange={() => console.log("slide change")}
             onSwiper={(swiper) => console.log(swiper)}
           >
@@ -379,6 +390,11 @@ export function New() {
 
 // review
 export function Review() {
+  const { width } = useDeviceSize();
+  const breakpoint = 768;
+  const spaceBetween = width < breakpoint ? 0 : 0;
+  const slidesPerView = width < breakpoint ? 1 : 2;
+
   const defaultReview = [
     {
       link: "/",
@@ -471,8 +487,8 @@ export function Review() {
           </div>
           <div className=" pb-10 md:pb-60px flex justify-center">
             <Swiper
-              spaceBetween={20}
-              slidesPerView={1.55}
+              spaceBetween={spaceBetween}
+              slidesPerView={slidesPerView}
               onSlideChange={() => console.log("slide change")}
               onSwiper={(swiper) => console.log(swiper)}
             >
@@ -551,6 +567,11 @@ export function Review() {
 
 // key item
 export function KeyItem() {
+  const { width } = useDeviceSize();
+  const breakpoint = 768;
+  const spaceBetween = width < breakpoint ? 10 : 10;
+  const slidesPerView = width < breakpoint ? 2.5 : 4;
+
   const defaultKeyItem = [
     {
       link: "/",
@@ -634,8 +655,8 @@ export function KeyItem() {
               <Swiper
                 modules={[Navigation]}
                 navigation
-                spaceBetween={20}
-                slidesPerView={4}
+                spaceBetween={spaceBetween}
+                slidesPerView={slidesPerView}
                 onSlideChange={() => console.log("slide change")}
                 onSwiper={(swiper) => console.log(swiper)}
               >
@@ -694,6 +715,11 @@ export function KeyItem() {
 
 //item
 export function Item() {
+  const { width } = useDeviceSize();
+  const breakpoint = 768;
+  const spaceBetween = width < breakpoint ? 10 : 10;
+  const slidesPerView = width < breakpoint ? 2.5 : 4;
+
   const defaultItem = [
     {
       link: "/",
@@ -776,8 +802,8 @@ export function Item() {
               <Swiper
                 modules={[Navigation]}
                 navigation
-                spaceBetween={20}
-                slidesPerView={4}
+                spaceBetween={spaceBetween}
+                slidesPerView={slidesPerView}
                 onSlideChange={() => console.log("slide change")}
                 onSwiper={(swiper) => console.log(swiper)}
               >
@@ -873,6 +899,11 @@ export function KeyWord() {
 
 //best
 export function Best() {
+  const { width } = useDeviceSize();
+  const breakpoint = 768;
+  const spaceBetween = width < breakpoint ? 0 : 20;
+  const slidesPerView = width < breakpoint ? 2 : 4.5;
+
   const defaultBest = [
     {
       link: "/",
@@ -1001,8 +1032,8 @@ export function Best() {
           <div className=" flex-nowrap pt-0 px-0 pb-5 flex md:my-0 md:-mx-10px">
             <Swiper
               modules={[Navigation]}
-              spaceBetween={20}
-              slidesPerView={4.5}
+              spaceBetween={spaceBetween}
+              slidesPerView={slidesPerView}
               navigation
               onSlideChange={() => console.log("slide change")}
               onSwiper={(swiper) => console.log(swiper)}
