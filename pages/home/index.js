@@ -6,11 +6,35 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Scrollbar } from "swiper";
 import React from "react";
 import { useDeviceSize } from "@/hooks/useScreenWidth";
+import fs from "fs";
+import matter from "gray-matter";
+import Image from "next/image";
+import Link from "next/link";
 import "swiper/css";
 import "swiper/css/scrollbar";
 import "swiper/css/navigation";
 
 const inter = Inter({ subsets: ["latin"] });
+
+export async function getStaticProps() {
+  const files = fs.readdirSync("posts");
+
+  const posts = files.map((fileName) => {
+    const slug = fileName.replace(".md", "");
+    const readFile = fs.readFileSync(`posts/${fileName}`, "utf-8");
+    const { data: frontmatter } = matter(readFile);
+    return {
+      slug,
+      frontmatter,
+    };
+  });
+
+  return {
+    props: {
+      posts,
+    },
+  };
+}
 
 export default function Home() {
   return (
@@ -566,54 +590,54 @@ export function Review() {
 }
 
 // key item
-export function KeyItem() {
+export function KeyItem({ posts }) {
   const { width } = useDeviceSize();
   const breakpoint = 768;
   const spaceBetween = width < breakpoint ? 10 : 10;
   const slidesPerView = width < breakpoint ? 2.5 : 4;
 
-  const defaultKeyItem = [
-    {
-      link: "/",
-      image: "/images/home/HZTS3A753E2_00.jpg",
-      name: "그린 퍼피자수 면 후드티셔츠",
-      sale: "197,100",
-      price: "219,000",
-      ratio: "10%",
-    },
-    {
-      link: "/",
-      image: "/images/home/HZTS3A753E2_00.jpg",
-      name: "그린 퍼피자수 면 후드티셔츠",
-      sale: "197,100",
-      price: "219,000",
-      ratio: "10%",
-    },
-    {
-      link: "/",
-      image: "/images/home/HZTS3A753E2_00.jpg",
-      name: "그린 퍼피자수 면 후드티셔츠",
-      sale: "197,100",
-      price: "219,000",
-      ratio: "10%",
-    },
-    {
-      link: "/",
-      image: "/images/home/HZTS3A753E2_00.jpg",
-      name: "그린 퍼피자수 면 후드티셔츠",
-      sale: "197,100",
-      price: "219,000",
-      ratio: "10%",
-    },
-    {
-      link: "/",
-      image: "/images/home/HZTS3A753E2_00.jpg",
-      name: "그린 퍼피자수 면 후드티셔츠",
-      sale: "197,100",
-      price: "219,000",
-      ratio: "10%",
-    },
-  ];
+  // const defaultKeyItem = [
+  //   {
+  //     link: "/",
+  //     image: "/images/home/HZTS3A753E2_00.jpg",
+  //     name: "그린 퍼피자수 면 후드티셔츠",
+  //     sale: "197,100",
+  //     price: "219,000",
+  //     ratio: "10%",
+  //   },
+  //   {
+  //     link: "/",
+  //     image: "/images/home/HZTS3A753E2_00.jpg",
+  //     name: "그린 퍼피자수 면 후드티셔츠",
+  //     sale: "197,100",
+  //     price: "219,000",
+  //     ratio: "10%",
+  //   },
+  //   {
+  //     link: "/",
+  //     image: "/images/home/HZTS3A753E2_00.jpg",
+  //     name: "그린 퍼피자수 면 후드티셔츠",
+  //     sale: "197,100",
+  //     price: "219,000",
+  //     ratio: "10%",
+  //   },
+  //   {
+  //     link: "/",
+  //     image: "/images/home/HZTS3A753E2_00.jpg",
+  //     name: "그린 퍼피자수 면 후드티셔츠",
+  //     sale: "197,100",
+  //     price: "219,000",
+  //     ratio: "10%",
+  //   },
+  //   {
+  //     link: "/",
+  //     image: "/images/home/HZTS3A753E2_00.jpg",
+  //     name: "그린 퍼피자수 면 후드티셔츠",
+  //     sale: "197,100",
+  //     price: "219,000",
+  //     ratio: "10%",
+  //   },
+  // ];
 
   return (
     <>
@@ -660,18 +684,18 @@ export function KeyItem() {
                 onSlideChange={() => console.log("slide change")}
                 onSwiper={(swiper) => console.log(swiper)}
               >
-                {defaultKeyItem.map((item, index) => (
-                  <SwiperSlide role="group" aria-label={index} key={index}>
+                {posts?.map(({ slug, frontmatter }) => (
+                  <SwiperSlide role="group" aria-label={slug} key={slug}>
                     <div className=" w-full relative overflow-hidden">
                       <div className=" relative">
                         <a
                           className=" relative block pt-125% cursor-pointer"
-                          href={item.link}
+                          href={`/post/${slug}`}
                         >
                           <img
                             className=" absolute top-0 w-full object-cover"
-                            src={item.image}
-                            alt="product"
+                            src={`/${frontmatter.socialImage}`}
+                            alt=""
                           />
                         </a>
                       </div>
@@ -679,18 +703,18 @@ export function KeyItem() {
                         <p
                           className={`pb-10px max-h-5 overflow-hidden text-ellipsis text-black ${styles.box}`}
                         >
-                          {item.name}
+                          {frontmatter.title}
                         </p>
                         <div className=" mt-auto items-start flex-col justify-between md:flex">
                           <p className=" mb-1 md:m-0 font-bold text-black">
-                            {item.sale}
+                            {/* {item.sale} */}
                           </p>
                           <p className=" font-normal text-black">
                             <span className=" mr-1 text-sm text-rgba33 line-through">
-                              {item.price}
+                              {/* {item.price} */}
                             </span>
                             <span className=" text-orange-500">
-                              {item.ratio}
+                              {/* {item.ratio} */}
                             </span>
                           </p>
                         </div>
