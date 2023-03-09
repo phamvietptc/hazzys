@@ -66,18 +66,18 @@ export default function Navbar() {
             {/* menu mobile*/}
             <div className=" fixed z-0 flex top-0 left-full items-center h-52px w-full py-0 pr-0 pl-5 bg-white md:hidden">
               <a
-                className=" flex items-center font-bold mr-30px cursor-pointer text-slate-800 before:bg-[url('/images/home/icon-loginout.png')] before:bg-no-repeat before:bg-center before:bg-24px before:w-6 before:h-6 before:block before:mr-10px"
+                className=" flex items-center font-bold mr-30px cursor-pointer text-slate-800 before:bg-[url('/icons/home/icon-loginout.png')] before:bg-no-repeat before:bg-center before:bg-24px before:w-6 before:h-6 before:block before:mr-10px"
                 href="/"
               >
                 로그인
               </a>
               <a
-                className=" flex items-center font-bold mr-30px cursor-pointer text-slate-800 before:bg-[url('/images/home/icon-join.png')] before:bg-no-repeat before:bg-center before:bg-24px before:w-6 before:h-6 before:block before:mr-10px"
+                className=" flex items-center font-bold mr-30px cursor-pointer text-slate-800 before:bg-[url('/icons/home/icon-join.png')] before:bg-no-repeat before:bg-center before:bg-24px before:w-6 before:h-6 before:block before:mr-10px"
                 href="/"
               >
                 회원가입
               </a>
-              <a className=" block overflow-hidden w-11 h-11 ml-auto -indent-60px bg-[url('/images/home/icon-close.png')] bg-24px cursor-pointer text-slate-800">
+              <a className=" block overflow-hidden w-11 h-11 ml-auto -indent-60px bg-[url('/icons/home/icon-close.png')] bg-24px cursor-pointer text-slate-800">
                 닫기
               </a>
             </div>
@@ -89,7 +89,7 @@ export default function Navbar() {
                   className=" relative py-0 pr-3 pl-5 list-outside list-none md:pl-2 md:pr-0"
                 >
                   <a
-                    className=" flex items-center h-52px py-0 px-0.520833px cursor-pointer text-slate-900 md:h-60px after:bg-[url('/images/home/icon-arr-left-black.png')] after:absolute after:top-1/2 after:right-3 after:block after:w-6 after:h-6 after:translate-y-1/2 md:hover:border-b-4 md:hover:border-t-4 md:hover:border-solid md:hover:border-b-black md:hover:border-t-white md:duration-150"
+                    className=" flex items-center h-52px py-0 px-0.520833px cursor-pointer text-slate-900 md:h-60px md:after:hidden after:bg-[url('/icons/home/icon-arr-left-black.png')] after:absolute after:top-1/2 after:right-3 after:block after:w-6 after:h-6 after:translate-y-1/2 md:hover:border-b-4 md:hover:border-t-4 md:hover:border-solid md:hover:border-b-black md:hover:border-t-white md:duration-150"
                     href={item.link}
                   >
                     {item.text}
