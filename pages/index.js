@@ -248,95 +248,9 @@ export default function Main({ posts }) {
   const spaceBetweenKeyItem = width < breakpoint ? 10 : 10;
   const slidesPerViewKeyItem = width < breakpoint ? 2.5 : 4;
 
-  const defaultKeyItem = [
-    {
-      link: "/",
-      image: "/images/home/HZTS3A753E2_00.jpg",
-      name: "그린 퍼피자수 면 후드티셔츠",
-      sale: "197,100",
-      price: "219,000",
-      ratio: "10%",
-    },
-    {
-      link: "/",
-      image: "/images/home/HZTS3A753E2_00.jpg",
-      name: "그린 퍼피자수 면 후드티셔츠",
-      sale: "197,100",
-      price: "219,000",
-      ratio: "10%",
-    },
-    {
-      link: "/",
-      image: "/images/home/HZTS3A753E2_00.jpg",
-      name: "그린 퍼피자수 면 후드티셔츠",
-      sale: "197,100",
-      price: "219,000",
-      ratio: "10%",
-    },
-    {
-      link: "/",
-      image: "/images/home/HZTS3A753E2_00.jpg",
-      name: "그린 퍼피자수 면 후드티셔츠",
-      sale: "197,100",
-      price: "219,000",
-      ratio: "10%",
-    },
-    {
-      link: "/",
-      image: "/images/home/HZTS3A753E2_00.jpg",
-      name: "그린 퍼피자수 면 후드티셔츠",
-      sale: "197,100",
-      price: "219,000",
-      ratio: "10%",
-    },
-  ];
-
   // item
   const spaceBetweenItem = width < breakpoint ? 10 : 10;
   const slidesPerViewItem = width < breakpoint ? 2.5 : 4;
-
-  const defaultItem = [
-    {
-      link: "/",
-      image: "/images/home/HZTS2D385BK_00.jpg",
-      name: "블랙 퍼피자수 면혼방 반집업티셔츠",
-      sale: "125,370",
-      price: "199,000",
-      ratio: "37%",
-    },
-    {
-      link: "/",
-      image: "/images/home/HZTS2D385BK_00.jpg",
-      name: "블랙 퍼피자수 면혼방 반집업티셔츠",
-      sale: "125,370",
-      price: "199,000",
-      ratio: "37%",
-    },
-    {
-      link: "/",
-      image: "/images/home/HZTS2D385BK_00.jpg",
-      name: "블랙 퍼피자수 면혼방 반집업티셔츠",
-      sale: "125,370",
-      price: "199,000",
-      ratio: "37%",
-    },
-    {
-      link: "/",
-      image: "/images/home/HZTS2D385BK_00.jpg",
-      name: "블랙 퍼피자수 면혼방 반집업티셔츠",
-      sale: "125,370",
-      price: "199,000",
-      ratio: "37%",
-    },
-    {
-      link: "/",
-      image: "/images/home/HZTS2D385BK_00.jpg",
-      name: "블랙 퍼피자수 면혼방 반집업티셔츠",
-      sale: "125,370",
-      price: "199,000",
-      ratio: "37%",
-    },
-  ];
 
   // best
   const spaceBetweenBest = width < breakpoint ? 0 : 20;
@@ -808,7 +722,7 @@ export default function Main({ posts }) {
                               <img
                                 className=" absolute top-0 w-full object-cover"
                                 src={`/${frontmatter.socialImage}`}
-                                alt=""
+                                alt={frontmatter.productCode}
                               />
                             </a>
                           </div>
@@ -816,18 +730,18 @@ export default function Main({ posts }) {
                             <p
                               className={`pb-10px max-h-5 overflow-hidden text-ellipsis text-black ${styles.box}`}
                             >
-                              {frontmatter.title}
+                              {frontmatter.name}
                             </p>
                             <div className=" mt-auto items-start flex-col justify-between md:flex">
                               <p className=" mb-1 md:m-0 font-bold text-black">
-                                {/* {item.sale} */}
+                                {frontmatter.sale}
                               </p>
                               <p className=" font-normal text-black">
                                 <span className=" mr-1 text-sm text-rgba33 line-through">
-                                  {/* {item.price} */}
+                                  {frontmatter.price}
                                 </span>
                                 <span className=" text-orange-500">
-                                  {/* {item.ratio} */}
+                                  {frontmatter.ratio}
                                 </span>
                               </p>
                             </div>
@@ -890,18 +804,18 @@ export default function Main({ posts }) {
                     onSlideChange={() => console.log("slide change")}
                     onSwiper={(swiper) => console.log(swiper)}
                   >
-                    {defaultItem.map((item, index) => (
-                      <SwiperSlide role="group" aria-label={index} key={index}>
+                    {posts.map(({ slug, frontmatter }) => (
+                      <SwiperSlide role="group" aria-label={slug} key={slug}>
                         <div className=" w-full relative overflow-hidden">
                           <div className=" relative">
                             <a
                               className=" relative block pt-125% cursor-pointer"
-                              href={item.link}
+                              href={`/post/${slug}`}
                             >
                               <img
                                 className=" absolute top-0 w-full object-cover"
-                                src={item.image}
-                                alt="product"
+                                src={frontmatter.socialImage}
+                                alt={frontmatter.productCode}
                               />
                             </a>
                           </div>
@@ -909,18 +823,18 @@ export default function Main({ posts }) {
                             <p
                               className={`pb-10px max-h-5 overflow-hidden text-ellipsis text-black ${styles.box}`}
                             >
-                              {item.name}
+                              {frontmatter.name}
                             </p>
                             <div className=" mt-auto items-start flex-col justify-between md:flex">
                               <p className=" mb-1 md:m-0 font-bold text-black">
-                                {item.sale}
+                                {frontmatter.sale}
                               </p>
                               <p className=" font-normal text-black">
                                 <span className=" mr-1 text-sm text-rgba33 line-through">
-                                  {item.price}
+                                  {frontmatter.price}
                                 </span>
                                 <span className=" text-orange-500">
-                                  {item.ratio}
+                                  {frontmatter.ratio}
                                 </span>
                               </p>
                             </div>
