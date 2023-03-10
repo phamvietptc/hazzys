@@ -39,6 +39,7 @@ export async function getStaticProps() {
 export default function Main({ posts }) {
   const { width } = useDeviceSize();
   const breakpoint = 768;
+  let count = 0;
 
   // slider
   const spaceBetweenSlider = width < breakpoint ? 0 : 40;
@@ -122,63 +123,6 @@ export default function Main({ posts }) {
     {
       link: "/",
       text: "GOLF",
-    },
-  ];
-
-  const cardNew = [
-    {
-      image: "/images/home/HUGF3E990BK_00.jpeg",
-      linkCard: "/",
-      label: "HAZZYS MEN",
-      name: "[HIS] [아벨] 오버핏 워크자켓",
-      sale: "186,480",
-      price: "259,000",
-      ratio: "28%",
-    },
-    {
-      image: "/images/home/HUGF3E990BK_00.jpeg",
-      linkCard: "/",
-      label: "HAZZYS MEN",
-      name: "[HIS] [아벨] 오버핏 워크자켓",
-      sale: "186,480",
-      price: "259,000",
-      ratio: "28%",
-    },
-    {
-      image: "/images/home/HUGF3E990BK_00.jpeg",
-      linkCard: "/",
-      label: "HAZZYS MEN",
-      name: "[HIS] [아벨] 오버핏 워크자켓",
-      sale: "186,480",
-      price: "259,000",
-      ratio: "28%",
-    },
-    {
-      image: "/images/home/HUGF3E990BK_00.jpeg",
-      linkCard: "/",
-      label: "HAZZYS MEN",
-      name: "[HIS] [아벨] 오버핏 워크자켓",
-      sale: "186,480",
-      price: "259,000",
-      ratio: "28%",
-    },
-    {
-      image: "/images/home/HUGF3E990BK_00.jpeg",
-      linkCard: "/",
-      label: "HAZZYS MEN",
-      name: "[HIS] [아벨] 오버핏 워크자켓",
-      sale: "186,480",
-      price: "259,000",
-      ratio: "28%",
-    },
-    {
-      image: "/images/home/HUGF3E990BK_00.jpeg",
-      linkCard: "/",
-      label: "HAZZYS MEN",
-      name: "[HIS] [아벨] 오버핏 워크자켓",
-      sale: "186,480",
-      price: "259,000",
-      ratio: "28%",
     },
   ];
 
@@ -514,38 +458,38 @@ export default function Main({ posts }) {
                 onSlideChange={() => console.log("slide change")}
                 onSwiper={(swiper) => console.log(swiper)}
               >
-                {cardNew.map((item, index) => (
-                  <SwiperSlide role="group" aria-label={index} key={index}>
+                {posts.map(({ slug, frontmatter }) => (
+                  <SwiperSlide role="group" aria-label={slug} key={slug}>
                     <div className=" w-full relative overflow-hidden">
                       <div className=" relative">
                         <a
                           className=" relative block pt-129% cursor-pointer"
-                          href={item.linkCard}
+                          href={`/post/${slug}`}
                         >
                           <img
                             className=" absolute top-0 w-full object-cover"
-                            src={item.image}
-                            alt="product"
+                            src={`/${frontmatter.socialImage}`}
+                            alt={frontmatter.productCode}
                           />
                         </a>
                       </div>
                       <div className=" pt-5 px-5 pb-0 cursor-pointer md:px-0">
-                        <p className=" text-black">{item.label}</p>
+                        <p className=" text-black">{frontmatter.brand}</p>
                         <p
                           className={` text-black max-h-5 overflow-hidden text-ellipsis ${styles.box}`}
                         >
-                          {item.name}
+                          {frontmatter.name}
                         </p>
                         <div className=" flex-row items-center flex justify-between mt-10px">
                           <p className=" mb-1 font-bold text-black md:m-0">
-                            {item.sale}
+                            {frontmatter.sale}
                           </p>
                           <p className=" font-normal text-black">
                             <span className=" mr-1 text-sm text-rgba33 line-through">
-                              {item.price}
+                              {frontmatter.price}
                             </span>
                             <span className=" text-orange-400">
-                              {item.ratio}
+                              {frontmatter.ratio}
                             </span>
                           </p>
                         </div>
@@ -925,8 +869,8 @@ export default function Main({ posts }) {
                   onSlideChange={() => console.log("slide change")}
                   onSwiper={(swiper) => console.log(swiper)}
                 >
-                  {productSlider.map((item, index) => (
-                    <SwiperSlide role="group" aria-label={index} key={index}>
+                  {posts.slice(0, 10).map(({ slug, frontmatter }) => (
+                    <SwiperSlide role="group" aria-label={slug} key={slug}>
                       <div className=" w-full relative overflow-hidden">
                         <div className=" relative">
                           <Swiper
@@ -937,45 +881,77 @@ export default function Main({ posts }) {
                             onSlideChange={() => console.log("slide change")}
                             onSwiper={(swiper) => console.log(swiper)}
                           >
-                            {productPictures.map((item, index) => (
-                              <SwiperSlide
-                                role="group"
-                                aria-label={index}
-                                key={index}
+                            {/* {posts.map(({ slug, frontmatter }) => ( */}
+                            <SwiperSlide
+                            // role="group"
+                            // aria-label={slug}
+                            // key={slug}
+                            >
+                              <a
+                                className=" pt-129% relative block overflow-hidden w-full cursor-pointer"
+                                href={`/post/${slug}`}
                               >
-                                <a
-                                  className=" pt-129% relative block overflow-hidden w-full cursor-pointer"
-                                  href={item.link}
-                                >
-                                  <img
-                                    className=" object-cover absolute top-0 left-1/2 h-full -translate-x-1/2"
-                                    src={item.picture}
-                                    alt="product"
-                                  />
-                                </a>
-                              </SwiperSlide>
-                            ))}
+                                <img
+                                  className=" object-cover absolute top-0 left-1/2 h-full -translate-x-1/2"
+                                  src={`/${frontmatter.image}`}
+                                  alt={frontmatter.productCode}
+                                />
+                              </a>
+                            </SwiperSlide>
+                            <SwiperSlide
+                            // role="group"
+                            // aria-label={slug}
+                            // key={slug}
+                            >
+                              <a
+                                className=" pt-129% relative block overflow-hidden w-full cursor-pointer"
+                                href={`/post/${slug}`}
+                              >
+                                <img
+                                  className=" object-cover absolute top-0 left-1/2 h-full -translate-x-1/2"
+                                  src={`/${frontmatter.image1}`}
+                                  alt={frontmatter.productCode}
+                                />
+                              </a>
+                            </SwiperSlide>
+                            <SwiperSlide
+                            // role="group"
+                            // aria-label={slug}
+                            // key={slug}
+                            >
+                              <a
+                                className=" pt-129% relative block overflow-hidden w-full cursor-pointer"
+                                href={`/post/${slug}`}
+                              >
+                                <img
+                                  className=" object-cover absolute top-0 left-1/2 h-full -translate-x-1/2"
+                                  src={`/${frontmatter.image2}`}
+                                  alt={frontmatter.productCode}
+                                />
+                              </a>
+                            </SwiperSlide>
+                            {/* ))} */}
                           </Swiper>
                           <div className=" relative pt-2 pr-4 pb-9 pl-5 md:pt-5 md:pr-0 md:pb-10 md:pl-20 cursor-pointer">
                             <i className=" top-54px md:top-5 left-5 md:left-0 w-auto md:w-72px h-10 md:h-60px text-black text-2.85 md:text-3.5 absolute flex items-center justify-center">
-                              {item.number}
+                              {++count}
                             </i>
-                            <p className=" text-black">{item.label}</p>
+                            <p className=" text-black">{frontmatter.brand}</p>
                             <p
                               className={` text-black max-h-5 overflow-hidden ${styles.box}`}
                             >
-                              {item.name}
+                              {frontmatter.name}
                             </p>
                             <div className=" block text-right ml-10 md:ml-0 mt-1 md:flex md:items-center md:justify-between">
                               <p className=" text-black font-bold mb-3px md:m-0">
-                                {item.sale}
+                                {frontmatter.sale}
                               </p>
                               <p className=" font-normal">
                                 <span className=" mr-5px text-sm text-rgba33 line-through">
-                                  {item.price}
+                                  {frontmatter.price}
                                 </span>
                                 <span className=" text-orange-500">
-                                  {item.ratio}
+                                  {frontmatter.ratio}
                                 </span>
                               </p>
                             </div>
