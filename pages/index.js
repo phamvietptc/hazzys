@@ -898,11 +898,7 @@ export default function Main({ posts }) {
                                 />
                               </a>
                             </SwiperSlide>
-                            <SwiperSlide
-                            // role="group"
-                            // aria-label={slug}
-                            // key={slug}
-                            >
+                            <SwiperSlide>
                               <a
                                 className=" pt-129% relative block overflow-hidden w-full cursor-pointer"
                                 href={`/post/${slug}`}
@@ -914,11 +910,7 @@ export default function Main({ posts }) {
                                 />
                               </a>
                             </SwiperSlide>
-                            <SwiperSlide
-                            // role="group"
-                            // aria-label={slug}
-                            // key={slug}
-                            >
+                            <SwiperSlide>
                               <a
                                 className=" pt-129% relative block overflow-hidden w-full cursor-pointer"
                                 href={`/post/${slug}`}
@@ -926,6 +918,54 @@ export default function Main({ posts }) {
                                 <img
                                   className=" object-cover absolute top-0 left-1/2 h-full -translate-x-1/2"
                                   src={`/${frontmatter.image2}`}
+                                  alt={frontmatter.productCode}
+                                />
+                              </a>
+                            </SwiperSlide>
+                            <SwiperSlide>
+                              <a
+                                className=" pt-129% relative block overflow-hidden w-full cursor-pointer"
+                                href={`/post/${slug}`}
+                              >
+                                <img
+                                  className=" object-cover absolute top-0 left-1/2 h-full -translate-x-1/2"
+                                  src={`/${frontmatter.image3}`}
+                                  alt={frontmatter.productCode}
+                                />
+                              </a>
+                            </SwiperSlide>
+                            <SwiperSlide>
+                              <a
+                                className=" pt-129% relative block overflow-hidden w-full cursor-pointer"
+                                href={`/post/${slug}`}
+                              >
+                                <img
+                                  className=" object-cover absolute top-0 left-1/2 h-full -translate-x-1/2"
+                                  src={`/${frontmatter.image4}`}
+                                  alt={frontmatter.productCode}
+                                />
+                              </a>
+                            </SwiperSlide>
+                            <SwiperSlide>
+                              <a
+                                className=" pt-129% relative block overflow-hidden w-full cursor-pointer"
+                                href={`/post/${slug}`}
+                              >
+                                <img
+                                  className=" object-cover absolute top-0 left-1/2 h-full -translate-x-1/2"
+                                  src={`/${frontmatter.image5}`}
+                                  alt={frontmatter.productCode}
+                                />
+                              </a>
+                            </SwiperSlide>
+                            <SwiperSlide>
+                              <a
+                                className=" pt-129% relative block overflow-hidden w-full cursor-pointer"
+                                href={`/post/${slug}`}
+                              >
+                                <img
+                                  className=" object-cover absolute top-0 left-1/2 h-full -translate-x-1/2"
+                                  src={`/${frontmatter.image6}`}
                                   alt={frontmatter.productCode}
                                 />
                               </a>
