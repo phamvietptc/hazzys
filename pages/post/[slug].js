@@ -53,11 +53,14 @@ export default function PostPage({ frontmatter, content }) {
                   <div className=" absolute top-5 left-5 z-50"></div>
                   <Swiper
                     loop={true}
-                    thumbs={{ swiper: thumbsSwiper }}
+                    thumbs={{
+                      swiper:
+                        thumbsSwiper && !thumbsSwiper.destroyed
+                          ? thumbsSwiper
+                          : null,
+                    }}
                     modules={[Scrollbar, Thumbs]}
                     scrollbar={{ draggable: true }}
-                    // onSlideChange={() => console.log("slide change")}
-                    // onSwiper={(swiper) => console.log(swiper)}
                     className=" w-full max-h-710px"
                   >
                     <SwiperSlide>
@@ -86,7 +89,7 @@ export default function PostPage({ frontmatter, content }) {
                     style={{ "--swiper-navigation-color": "#000" }}
                     speed={600}
                     navigation={true}
-                    // onSwiper={setThumbsSwiper}
+                    onSwiper={setThumbsSwiper}
                     loop={true}
                     spaceBetween={10}
                     slidesPerView={5}
