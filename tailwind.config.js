@@ -153,6 +153,7 @@ module.exports = {
         "21px": "21px",
         "831px": "831px",
         "120%": "120%",
+        "710px": "710px",
       },
       backgroundSize: {
         "24px": "24px",

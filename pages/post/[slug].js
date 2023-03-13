@@ -2,16 +2,13 @@ import Footer from "@/components/footer";
 import Navbar from "@/components/navbar";
 import fs from "fs";
 import matter from "gray-matter";
-import md from "markdown-it";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Scrollbar, Pagination, Navigation, FreeMode, Thumbs } from "swiper";
-import React, { useRef, useState } from "react";
+import { Scrollbar, Navigation, Thumbs } from "swiper";
+import React, { useState } from "react";
 import "swiper/css";
 import "swiper/css/scrollbar";
 import "swiper/css/navigation";
-import "swiper/css/pagination";
 import "swiper/css/thumbs";
-import "swiper/css/free-mode";
 
 export async function getStaticPaths() {
   const files = fs.readdirSync("posts");
@@ -57,11 +54,11 @@ export default function PostPage({ frontmatter, content }) {
                   <Swiper
                     loop={true}
                     thumbs={{ swiper: thumbsSwiper }}
-                    modules={[Scrollbar, FreeMode, Thumbs]}
+                    modules={[Scrollbar, Thumbs]}
                     scrollbar={{ draggable: true }}
                     // onSlideChange={() => console.log("slide change")}
                     // onSwiper={(swiper) => console.log(swiper)}
-                    className="mySwiper2"
+                    className=" w-full max-h-710px"
                   >
                     <SwiperSlide>
                       <img src={`/${frontmatter.socialImage}`} />
@@ -85,46 +82,40 @@ export default function PostPage({ frontmatter, content }) {
                       <img src={`/${frontmatter.image6}`} />
                     </SwiperSlide>
                   </Swiper>
-                  <div className=" hidden md:block">
-                    <Swiper
-                      style={{
-                        "--swiper-navigation-color": "#000",
-                        "--swiper-pagination-color": "#000",
-                      }}
-                      speed={600}
-                      navigation={true}
-                      // onSwiper={setThumbsSwiper}
-                      loop={true}
-                      spaceBetween={10}
-                      slidesPerView={5}
-                      freeMode={true}
-                      watchSlidesProgress={true}
-                      modules={[FreeMode, Pagination, Navigation, Thumbs]}
-                      className="mySwiper"
-                    >
-                      <SwiperSlide>
-                        <img src={`/${frontmatter.socialImage}`} />
-                      </SwiperSlide>
-                      <SwiperSlide role="group">
-                        <img src={`/${frontmatter.image1}`} />
-                      </SwiperSlide>
-                      <SwiperSlide>
-                        <img src={`/${frontmatter.image2}`} />
-                      </SwiperSlide>
-                      <SwiperSlide>
-                        <img src={`/${frontmatter.image3}`} />
-                      </SwiperSlide>
-                      <SwiperSlide>
-                        <img src={`/${frontmatter.image4}`} />
-                      </SwiperSlide>
-                      <SwiperSlide>
-                        <img src={`/${frontmatter.image5}`} />
-                      </SwiperSlide>
-                      <SwiperSlide>
-                        <img src={`/${frontmatter.image6}`} />
-                      </SwiperSlide>
-                    </Swiper>
-                  </div>
+                  <Swiper
+                    style={{ "--swiper-navigation-color": "#000" }}
+                    speed={600}
+                    navigation={true}
+                    // onSwiper={setThumbsSwiper}
+                    loop={true}
+                    spaceBetween={10}
+                    slidesPerView={5}
+                    watchSlidesProgress
+                    modules={[Navigation, Thumbs]}
+                    className=" !hidden md:!block"
+                  >
+                    <SwiperSlide>
+                      <img src={`/${frontmatter.socialImage}`} />
+                    </SwiperSlide>
+                    <SwiperSlide role="group">
+                      <img src={`/${frontmatter.image1}`} />
+                    </SwiperSlide>
+                    <SwiperSlide>
+                      <img src={`/${frontmatter.image2}`} />
+                    </SwiperSlide>
+                    <SwiperSlide>
+                      <img src={`/${frontmatter.image3}`} />
+                    </SwiperSlide>
+                    <SwiperSlide>
+                      <img src={`/${frontmatter.image4}`} />
+                    </SwiperSlide>
+                    <SwiperSlide>
+                      <img src={`/${frontmatter.image5}`} />
+                    </SwiperSlide>
+                    <SwiperSlide>
+                      <img src={`/${frontmatter.image6}`} />
+                    </SwiperSlide>
+                  </Swiper>
                 </div>
               </div>
               <div className=" max-w-full md:max-w-525px py-6 px-5 overflow-hidden w-full md:ml-50px">
