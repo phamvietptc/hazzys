@@ -4,11 +4,14 @@ import fs from "fs";
 import matter from "gray-matter";
 import md from "markdown-it";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Scrollbar } from "swiper";
-import { useDeviceSize } from "@/hooks/useScreenWidth";
+import { Scrollbar, Pagination, Navigation, FreeMode, Thumbs } from "swiper";
+import React, { useRef, useState } from "react";
 import "swiper/css";
 import "swiper/css/scrollbar";
 import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "swiper/css/thumbs";
+import "swiper/css/free-mode";
 
 export async function getStaticPaths() {
   const files = fs.readdirSync("posts");
@@ -35,10 +38,7 @@ export async function getStaticProps({ params: { slug } }) {
 }
 
 export default function PostPage({ frontmatter, content }) {
-  const { width } = useDeviceSize();
-  const breakpoint = 768;
-  const spaceBetween = width < breakpoint ? 0 : 12;
-  const slidesPerView = width < breakpoint ? 1 : 1;
+  const [thumbsSwiper, setThumbsSwiper] = useState(null);
 
   return (
     // <div className="prose mx-auto">
@@ -55,23 +55,76 @@ export default function PostPage({ frontmatter, content }) {
                 <div className=" relative w-full">
                   <div className=" absolute top-5 left-5 z-50"></div>
                   <Swiper
-                    modules={[Scrollbar]}
+                    loop={true}
+                    thumbs={{ swiper: thumbsSwiper }}
+                    modules={[Scrollbar, FreeMode, Thumbs]}
                     scrollbar={{ draggable: true }}
-                    spaceBetween={spaceBetween}
-                    slidesPerView={slidesPerView}
-                    onSlideChange={() => console.log("slide change")}
-                    onSwiper={(swiper) => console.log(swiper)}
-                    aria-live="polite"
+                    // onSlideChange={() => console.log("slide change")}
+                    // onSwiper={(swiper) => console.log(swiper)}
+                    className="mySwiper2"
                   >
-                    <SwiperSlide role="group">
-                      <div className=" h-full">
-                        <img
-                          src={`/${frontmatter.socialImage}`}
-                          alt={frontmatter.productCode}
-                        />
-                      </div>
+                    <SwiperSlide>
+                      <img src={`/${frontmatter.socialImage}`} />
+                    </SwiperSlide>
+                    <SwiperSlide>
+                      <img src={`/${frontmatter.image1}`} />
+                    </SwiperSlide>
+                    <SwiperSlide>
+                      <img src={`/${frontmatter.image2}`} />
+                    </SwiperSlide>
+                    <SwiperSlide>
+                      <img src={`/${frontmatter.image3}`} />
+                    </SwiperSlide>
+                    <SwiperSlide>
+                      <img src={`/${frontmatter.image4}`} />
+                    </SwiperSlide>
+                    <SwiperSlide>
+                      <img src={`/${frontmatter.image5}`} />
+                    </SwiperSlide>
+                    <SwiperSlide>
+                      <img src={`/${frontmatter.image6}`} />
                     </SwiperSlide>
                   </Swiper>
+                  <div className=" hidden md:block">
+                    <Swiper
+                      style={{
+                        "--swiper-navigation-color": "#000",
+                        "--swiper-pagination-color": "#000",
+                      }}
+                      speed={600}
+                      navigation={true}
+                      // onSwiper={setThumbsSwiper}
+                      loop={true}
+                      spaceBetween={10}
+                      slidesPerView={5}
+                      freeMode={true}
+                      watchSlidesProgress={true}
+                      modules={[FreeMode, Pagination, Navigation, Thumbs]}
+                      className="mySwiper"
+                    >
+                      <SwiperSlide>
+                        <img src={`/${frontmatter.socialImage}`} />
+                      </SwiperSlide>
+                      <SwiperSlide role="group">
+                        <img src={`/${frontmatter.image1}`} />
+                      </SwiperSlide>
+                      <SwiperSlide>
+                        <img src={`/${frontmatter.image2}`} />
+                      </SwiperSlide>
+                      <SwiperSlide>
+                        <img src={`/${frontmatter.image3}`} />
+                      </SwiperSlide>
+                      <SwiperSlide>
+                        <img src={`/${frontmatter.image4}`} />
+                      </SwiperSlide>
+                      <SwiperSlide>
+                        <img src={`/${frontmatter.image5}`} />
+                      </SwiperSlide>
+                      <SwiperSlide>
+                        <img src={`/${frontmatter.image6}`} />
+                      </SwiperSlide>
+                    </Swiper>
+                  </div>
                 </div>
               </div>
               <div className=" max-w-full md:max-w-525px py-6 px-5 overflow-hidden w-full md:ml-50px">

@@ -4,7 +4,7 @@ import { Inter } from "@next/font/google";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Scrollbar } from "swiper";
+import { Navigation, Pagination, Scrollbar } from "swiper";
 import React from "react";
 import { useDeviceSize } from "@/hooks/useScreenWidth";
 import fs from "fs";
@@ -648,7 +648,12 @@ export default function Main({ posts }) {
                 </div>
                 <div className=" static w-calc-10px m-calc-147px flex flex-wrap md:top-280px md:w-calc-505px md:absolute md:left-0 md:my-0 md:-mx-10px">
                   <Swiper
-                    modules={[Navigation]}
+                    style={{
+                      "--swiper-navigation-color": "#000",
+                      "--swiper-pagination-color": "#000",
+                    }}
+                    speed={600}
+                    modules={[Navigation, Pagination]}
                     navigation
                     spaceBetween={spaceBetweenKeyItem}
                     slidesPerView={slidesPerViewKeyItem}
@@ -741,7 +746,12 @@ export default function Main({ posts }) {
                 </div>
                 <div className=" static w-calc-10px m-calc-147px flex flex-wrap md:absolute md:top-340px md:left-0 md:w-63.125% md:my-0 md:-mx-10px">
                   <Swiper
-                    modules={[Navigation]}
+                    style={{
+                      "--swiper-navigation-color": "#000",
+                      "--swiper-pagination-color": "#000",
+                    }}
+                    speed={600}
+                    modules={[Navigation, Pagination]}
                     navigation
                     spaceBetween={spaceBetweenItem}
                     slidesPerView={slidesPerViewItem}
