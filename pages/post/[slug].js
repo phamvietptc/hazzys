@@ -48,7 +48,7 @@ export default function PostPage({ frontmatter, content }) {
     <>
       <div className=" relative overflow-hidden w-full min-h-full bg-white">
         <Navbar />
-        <div className=" mt-0 mx-0 -mb-636px pt-11 px-0 pb-716px md:pt-120px md:pb-433px min-h-full">
+        <div className=" mt-0 mx-0 pt-11 px-0 pb-716px md:pt-120px md:pb-433px min-h-full">
           <div className=" max-w-1920px w-full h-full my-0 mx-auto">
             <div className=" flex-col md:flex-row border-b-8 border-solid border-slate-100 md:border-none flex justify-center items-start w-full md:pt-60px md:px-50px md:pb-120px">
               <div className=" max-w-full md:max-w-595px overflow-visible md:overflow-hidden max-h-none md:max-h-831px relative w-full">

@@ -305,7 +305,7 @@ export default function Main({ posts }) {
       {/* body */}
       <div className=" relative overflow-hidden w-full min-h-full ">
         <Navbar />
-        <div className=" pt-0 bg-white mt-0 mx-0 -mb-636px px-0 pb-716px min-h-full md:pt-120px md:pb-433px">
+        <div className=" pt-0 bg-white mt-0 mx-0 px-0 pb-716px min-h-full md:pt-120px md:pb-433px">
           {/* slider */}
           <section className=" mb-0 md:mb-50px overflow-hidden w-full">
             <div className=" relative md:overflow-hidden">
@@ -893,7 +893,7 @@ export default function Main({ posts }) {
                               >
                                 <img
                                   className=" object-cover absolute top-0 left-1/2 h-full -translate-x-1/2"
-                                  src={`/${frontmatter.image}`}
+                                  src={`/${frontmatter.socialImage}`}
                                   alt={frontmatter.productCode}
                                 />
                               </a>

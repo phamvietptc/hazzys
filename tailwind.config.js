@@ -83,7 +83,6 @@ module.exports = {
         "9px": "9px",
         "5px": "5px",
         "3px": "3px",
-        "636px": "636px",
         "2px": "2px",
       },
       borderRadius: {
