@@ -222,6 +222,30 @@ export default function PostPage({ frontmatter, content }) {
                           {frontmatter.weight}
                         </span>
                       </li>
+                      <li className=" text-base pt-14px flex justify-between text-slate-500 leading-normal">
+                        <strong className=" font-normal text-black">
+                          크기
+                        </strong>
+                        <span className=" w-calc-96px text-left">
+                          {frontmatter.size}
+                        </span>
+                      </li>
+                      <li className=" text-base pt-14px flex justify-between text-slate-500 leading-normal">
+                        <strong className=" font-normal text-black">
+                          성별
+                        </strong>
+                        <span className=" w-calc-96px text-left">
+                          {frontmatter.gender}
+                        </span>
+                      </li>
+                      <li className=" text-base pt-14px flex justify-between text-slate-500 leading-normal">
+                        <strong className=" font-normal text-black">
+                          시즌
+                        </strong>
+                        <span className=" w-calc-96px text-left">
+                          {frontmatter.season}
+                        </span>
+                      </li>
                     </ul>
                   </div>
                 </div>
